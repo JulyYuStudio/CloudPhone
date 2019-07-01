@@ -32,7 +32,7 @@ module.exports = {
     plugins: [
         // '@/plugins/antd-ui',
         '@/plugins/i18n',
-        '@/plugins/vant-ui'
+        '@/plugins/element-ui'
         // '@/plugins/muse-ui',
         // { src: '@/plugins/axios.ts', ssr: true }
     ],
