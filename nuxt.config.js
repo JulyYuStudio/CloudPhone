@@ -1,4 +1,7 @@
 // import { vendor } from "postcss";
+// const path = require('path')
+// const PostCompilePlugin = require('webpack-post-compile-plugin')
+// const TransformModulesPlugin = require('webpack-transform-modules-plugin')
 
 module.exports = {
     mode: 'spa',
@@ -24,7 +27,7 @@ module.exports = {
      ** Global CSS
      */
     css: [
-        'ant-design-vue/dist/antd.css'
+        'vant/lib/index.css'
     ],
     /*
      ** Plugins to load before mounting the App
@@ -32,9 +35,9 @@ module.exports = {
     plugins: [
         // '@/plugins/antd-ui',
         '@/plugins/i18n',
-        '@/plugins/element-ui'
+        '@/plugins/vant-ui',
         // '@/plugins/muse-ui',
-        // { src: '@/plugins/axios.ts', ssr: true }
+        { src: '@/plugins/axios.ts', ssr: true }
     ],
     /*
      ** Nuxt.js modules
@@ -51,16 +54,17 @@ module.exports = {
          ** You can extend webpack config here
          */
         extend(config, ctx) {},
-        // vendor: ['axios']
+        // vendor: ['axios', 'element-ui']
+
     },
     axios: {
         proxy: true,
     },
     proxy: {
         '/api': {
-            target: 'https://gank.io/gankio', // 代理地址
+            target: 'https://gank.io/gank', // 代理地址
             changeOrigin: true,
-            pathRewrite: { '^/gankio': '' }
+            pathRewrite: { '^/gank': '' }
         },
     }
 

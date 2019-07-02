@@ -1,41 +1,42 @@
 <template>
   <div>
-    <div>index {{this.$store.state.counter}}</div>
-    <mu-button v-on:click='addCounter' >add</mu-button>
-     <mu-button v-on:click='reduceCounter' >reduce</mu-button>
+    <van-nav-bar title="标题" />
+    <div class="index-bg">
+      <van-grid class="index-grid" :gutter="0" :clickable="true" :border="true" :column-num="3">
+        <van-grid-item class="index-grid-item" v-for="app in apps" :key="app._id" :to="{path:app.link,query:{title: app.name}}">
+          <AppIcon  :app="app"/>
+        </van-grid-item>
+      </van-grid>
+    </div>
   </div>
 </template>
-
 <script>
-// import { mapMutations } from 'vuex'
-// import { Layout, Menu, Icon } from 'antd';
-// const { Header, Content, Footer, Sider } = Layout;
-// import Logo from '~/components/Logo.vue'
-
-// export default {
-//   components: {
-//     Logo
-//   }
-// }
-
-export default{
-  methods: {
-    addCounter(){
-      this.$store.commit('increment')
-    },
-    reduceCounter(){
-      this.$store.commit('reduce')
-    }
+import AppIcon from "~/components/AppIcon";
+var Apps  = require("~/assets/res/apps.json");
+export default {
+  components:{
+      AppIcon
+  },
+  data: function() {
+    return {
+      apps: Apps
+    };
   }
-}
+};
 </script>
-
 <style>
-#components-layout-demo-top .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 24px 16px 0;
-  float: left;
+.index-bg {
+  background-color: blanchedalmond;
+}
+.index-grid{
+  padding: 10%;
+}
+.index-grid-item{
+  padding: 5px;
+  
+}
+
+.index-grid-item div{
+  background-color: #ffffff00;
 }
 </style>

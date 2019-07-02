@@ -1,11 +1,11 @@
 <template>
 <div>
-<mu-list @load="onload" >
+<!-- <mu-list @load="onload" >
     <mu-list-item v-for="todo in list" :key="todo.id">
       <span>{{ todo.desc }}</span>
     </mu-list-item>
   </mu-list>
-  <mu-button color="warning" v-on:click='onload'>Warning</mu-button>
+  <mu-button color="warning" v-on:click='onload'>Warning</mu-button> -->
 </div>
   
 </template>
@@ -17,7 +17,6 @@ export default {
 
   computed: {
     list() {
-     
       return this.$store.state.movie.list
     }
   },
