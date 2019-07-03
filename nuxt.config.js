@@ -4,6 +4,7 @@
 // const TransformModulesPlugin = require('webpack-transform-modules-plugin')
 
 module.exports = {
+    srcDir: './src',
     mode: 'spa',
     /*
      ** Headers of the page
@@ -33,10 +34,8 @@ module.exports = {
      ** Plugins to load before mounting the App
      */
     plugins: [
-        // '@/plugins/antd-ui',
         '@/plugins/i18n',
         '@/plugins/vant-ui',
-        // '@/plugins/muse-ui',
         { src: '@/plugins/axios.ts', ssr: true }
     ],
     /*
@@ -54,18 +53,21 @@ module.exports = {
          ** You can extend webpack config here
          */
         extend(config, ctx) {},
-        // vendor: ['axios', 'element-ui']
+        // vendor: ['axios']
 
     },
     axios: {
         proxy: true,
     },
     proxy: {
-        '/api': {
-            target: 'https://gank.io/gank', // 代理地址
-            changeOrigin: true,
-            pathRewrite: { '^/gank': '' }
+        '/tianqi': {
+            target: 'https://www.tianqiapi.com',
+            pathRewrite: { '^/tianqi': '' }
         },
-    }
+        '/gankapi': {
+            target: 'https://gank.io', // 代理地址
+            pathRewrite: { '^/gankapi': '' }
+        },
+    },
 
 }
