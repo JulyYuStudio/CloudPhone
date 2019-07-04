@@ -1,6 +1,6 @@
 export const state = () => ({
     counter: 0,
-    wallpaper: "wallpaper3.jpeg"
+    wallpaper: "wallpaper1.jpeg"
 })
 
 export const mutations = {
@@ -11,8 +11,9 @@ export const mutations = {
         state.counter--
     },
     selectWallPaper(state, data) {
-        console.log("selectWallPaper", data)
-        state.wallpaper = data.wallpaper
+        var length = data.wallpaper.length;
+        var index = data.wallpaper.lastIndexOf("/");
+        state.wallpaper = data.wallpaper.substring(index + 1,length)
     }
 }
 

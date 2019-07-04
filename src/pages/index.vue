@@ -37,8 +37,8 @@ export default {
     
   },
   mounted() {
-    console.log("wallpaper", this.$store.state.wallpaper);
-    console.log("wallpaper", this.wallpaper);
+    console.log("mounted wallpaper", this.$store.state.wallpaper);
+    console.log("mounted wallpaper", this.wallpaper);
     const wallpaperSeleted = this.$store.state.wallpaper;
     this.wallpaper = (function() {
       return require("~/assets/wallpaper/" + wallpaperSeleted);

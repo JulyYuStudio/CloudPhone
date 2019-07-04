@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppToolBar />
+    <AppToolBar/>
     <!-- <div class='index-bg'>
         <div class='index-bg' :style="'backgroundImage: url(' + wallpapers[0] + ')'" />
     </div>-->
@@ -8,7 +8,7 @@
       <van-list>
         <van-cell style="height:300px;" v-for="(wallpaper,index) in wallpapers" :key="index">
           <div
-            v-on:click="onSelectWallPaper('wallpaper2.jpeg')"
+            v-on:click="onSelectWallPaper(wallpaper)"
             class="wallpaper-cell"
             :click="onSelectWallPaper"
             :style="'backgroundImage: url(' + wallpaper + ')'"
@@ -49,7 +49,9 @@ export default {
             wallpaper: wallpaper
           }
         })
-        .then(() => {});
+        .then(() => {
+          this.$router.replace("/");
+        });
     }
   },
   components: {
