@@ -1,9 +1,8 @@
 <template>
-  <transition name="fade" mode="out-in">
+  <transition name="slide-fade">
     <div class="parent">
-      <van-nav-bar :title="this.$route.query.title" />
       <div class="content">
-        <nuxt />
+        <nuxt  />
       </div>
       <van-tabbar :route="false">
         <van-tabbar-item name="back" icon="arrow-left" :replace="true" to="/">Back</van-tabbar-item>
@@ -27,11 +26,15 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+.slide-fade-enter-active {
+  transition: all .3s ease;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(10px);
   opacity: 0;
 }
 body {
@@ -44,8 +47,9 @@ body {
 }
 .content {
   width: 100%; /*必须*/
+  height: 100%;
+  top:0px;
   bottom: 50px;
-  top: 46px;
   position: absolute;
 }
 </style>

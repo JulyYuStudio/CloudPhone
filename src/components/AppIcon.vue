@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <van-image class="app-icon" :id="app._id" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
     <div class="app-text">{{app.name}}</div>
   </div>
@@ -18,14 +18,17 @@ export default {
 </script>
 
 <style>
+
 .app-icon img {
   width: 60px;
   height: 60px;
   border-radius: 5px;
 }
 .app-text {
-  font-size: 10px;
+  font-size: 15px;
+  font-weight: 700;
   text-align: center;
-  color: gray;
+  color: whitesmoke;
+  background: rgb(255, 255, 255)
 }
 </style>

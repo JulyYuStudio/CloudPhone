@@ -68,6 +68,9 @@ module.exports = {
             target: 'https://gank.io', // 代理地址
             pathRewrite: { '^/gankapi': '' }
         },
+        '/large': {
+            target: 'https://ww1.sinaimg.cn',
+        }
     },
 
 }
