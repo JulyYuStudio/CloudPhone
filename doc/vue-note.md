@@ -1,5 +1,4 @@
-template 
-
+template{
 script{
     - export defalut{
         - data
@@ -26,7 +25,10 @@ lifecycle{
     - updated
     - beforeDestroy
     - destroyed
+}    
 }
+
+
 
 指令{
     v-if
@@ -49,6 +51,8 @@ prop{
 vue-class-component{
     
 }
+
+
 
 vuex{
     stroe{

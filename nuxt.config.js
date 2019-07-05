@@ -2,7 +2,11 @@
 // const path = require('path')
 // const PostCompilePlugin = require('webpack-post-compile-plugin')
 // const TransformModulesPlugin = require('webpack-transform-modules-plugin')
-
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+    router: {
+        base: '/<repository-name>/'
+    }
+} : {}
 module.exports = {
     srcDir: './src',
     mode: 'spa',
@@ -21,6 +25,7 @@ module.exports = {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
+    ...routerBase,
     /*
      ** Customize the progress-bar color
      */
