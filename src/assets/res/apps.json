@@ -17,4 +17,8 @@
     "_id": 4,
     "name": "设置",
     "link": "/settings"
+}, {
+    "_id": 5,
+    "name": "相机",
+    "link": "/camera"
 }]
