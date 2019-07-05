@@ -50,4 +50,13 @@ vue-class-component{
     
 }
 
+vuex{
+    stroe{
+        - state
+        - mutations  (不可异步执行，应该是这样才有了action，在action中异步执行然后再执行mutations)
+        - actions
+        - getters
+    }
+}
+
 

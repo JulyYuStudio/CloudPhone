@@ -1,15 +1,18 @@
 [{
     "_id": 1,
     "name": "GankIo",
-    "link": "/gankio"
+    "link": "/gankio",
+    "icon": "app/ic_app_gank.jpeg"
 }, {
     "_id": 2,
     "name": "Jay",
-    "link": "/jay"
+    "link": "/jay",
+    "icon": "app/ic_app_jay.jpg"
 }, {
     "_id": 3,
     "name": "天气",
-    "link": "/weather"
+    "link": "/weather",
+    "icon": "weather/weather_icon.png"
 }, {
     "_id": 4,
     "name": "设置",

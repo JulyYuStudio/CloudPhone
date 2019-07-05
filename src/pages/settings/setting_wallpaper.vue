@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppToolBar/>
+    <AppToolBar title="壁纸"/>
     <!-- <div class='index-bg'>
         <div class='index-bg' :style="'backgroundImage: url(' + wallpapers[0] + ')'" />
     </div>-->
@@ -50,6 +50,7 @@ export default {
           }
         })
         .then(() => {
+          this.$toast("更换壁纸成功");
           this.$router.replace("/");
         });
     }

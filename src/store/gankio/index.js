@@ -34,7 +34,7 @@ export const mutations = {
                 break;
         }
     },
-    clear(state){
+    clear(state) {
         var empty = {
             page: 1,
             datas: []
@@ -46,8 +46,8 @@ export const mutations = {
 }
 
 export const actions = {
-    loadTech({ commit,state}, { data }) {
-        var page = getPage(state,data.category)
+    loadTech({ commit, state }, { data }) {
+        var page = getPage(state, data.category)
         console.log("loadTech", `${data}-----${page}`)
         return this.$axios.$get(`/gankapi/api/data/${data.category}/10/${page}`).then((result) => {
             commit('update', {
@@ -56,12 +56,12 @@ export const actions = {
             })
         });
     },
-    resetAll({commit}){
+    resetAll({ commit }) {
         commit('clear')
     }
 }
 
-export function getPage(state,category){
+export function getPage(state, category) {
     switch (category) {
         case "Android":
             return state.android.page;

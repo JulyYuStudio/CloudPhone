@@ -1,6 +1,6 @@
 <template>
   <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
-    <van-cell v-for="item in list" :key="item._id" :title="item.desc" :url="item.url"/>
+    <van-cell v-for="item in list" :key="item._id" :title="item.desc" @click="jumpUrl(item.url)"/>
   </van-list>
 </template>
 
@@ -33,9 +33,6 @@ export default {
 
   methods: {
     onLoad() {
-      //   this.loading = true;
-    //   console.log("onLoad", this.category);
-      // this.finished = true;
       this.loading = true;
       this.$store
         .dispatch({
@@ -53,6 +50,9 @@ export default {
               this.loading = false;
           }
         );
+    },
+    jumpUrl(url){
+      window.open(url);
     }
   }
 };
