@@ -9,7 +9,7 @@ export default {
       audio: true,
       video: true
     };
-    window.navigator.mediaDevices.webkitGetUserMedia(constraints).then(
+    window.navigator.mediaDevices.getUserMedia(constraints).then(
       () => {
         console.log("success");
       },
