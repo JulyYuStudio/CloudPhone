@@ -1,25 +1,25 @@
 <template>
   <div>
-    <AppToolBar :title="this.$route.query.title" />
+    <AppToolBar :title="$t('app.setting')" />
     <div>
       <div class="setting-menu-child">
         <van-cell-group>
-          <van-cell title="壁纸" is-link to="/settings/setting_wallpaper"/>
-          <van-cell title="桌面" is-link />
-          <van-cell title="Github" is-link />
+          <van-cell :title='$t("settings.wallpaper")' is-link to="/settings/setting_wallpaper"/>
+          <van-cell :title='$t("settings.desktop")' is-link />
+          <van-cell :title='$t("settings.lanuage")' is-link to="/settings/setting_lan"/>
         </van-cell-group>
       </div>
       <div class="setting-menu-child">
         <van-cell-group>
-          <van-cell title="博客" is-link />
-          <van-cell title="微博" is-link />
-          <van-cell title="Github" is-link />
+          <van-cell :title='$t("settings.blog")' is-link />
+          <van-cell :title='$t("settings.weibo")' is-link />
+          <van-cell :title='$t("settings.github")' is-link />
         </van-cell-group>
       </div>
       <div class="setting-menu-child">
         <van-cell-group>
-          <van-cell title="关于系统" is-link to="/settings/about_system"/>
-          <van-cell title="关于我" is-link />
+          <van-cell :title='$t("settings.system")' is-link to="/settings/about_system"/>
+          <van-cell :title='$t("settings.me")' is-link />
         </van-cell-group>
       </div>
     </div>

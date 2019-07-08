@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-image class="app-icon" :id="app._id" :src="getIcon(app.icon)" />
-    <div class="app-text">{{app.name}}</div>
+    <div class="app-text">{{$t(`${app.name}`)}}</div>
   </div>
 </template>
 

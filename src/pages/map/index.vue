@@ -1,6 +1,6 @@
 <template>
   <div class="amap-page-container">
-     <AppToolBar :title="this.$route.query.title" />
+     <AppToolBar :title="$t(`${this.$route.query.title}`)" />
     <el-amap vid="amap"  :amap-manager="amapManager" :zoom="zoom" class="amap"></el-amap>
   </div>
 </template>

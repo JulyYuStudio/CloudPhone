@@ -1,28 +1,28 @@
 [{
     "_id": 1,
-    "name": "GankIo",
+    "name": "app.gankIO",
     "link": "/gankio",
     "icon": "app/ic_app_gank.jpeg"
 }, {
     "_id": 2,
-    "name": "Jay",
+    "name": "app.jay",
     "link": "/jay",
     "icon": "app/ic_app_jay.jpg"
 }, {
     "_id": 3,
-    "name": "天气",
+    "name": "app.weather",
     "link": "/weather",
     "icon": "weather/weather_icon.png"
 }, {
     "_id": 4,
-    "name": "设置",
+    "name": "app.setting",
     "link": "/settings"
 }, {
     "_id": 5,
-    "name": "相机",
+    "name": "app.camera",
     "link": "/camera"
 }, {
     "_id": 6,
-    "name": "地图",
+    "name": "app.map",
     "link": "/map"
 }]

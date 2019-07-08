@@ -4,7 +4,8 @@
 // const TransformModulesPlugin = require('webpack-transform-modules-plugin')
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     router: {
-        base: '/<repository-name>/'
+        base: '/<repository-name>/',
+        middleware: 'i18n'
     }
 } : {}
 module.exports = {
@@ -60,7 +61,7 @@ module.exports = {
          ** You can extend webpack config here
          */
         extend(config, ctx) {},
-        // vendor: ['axios']
+        // vendor: ['vue-i18n']
 
     },
     axios: {
