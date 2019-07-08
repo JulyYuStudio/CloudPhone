@@ -43,7 +43,9 @@ export default {
     this.wallpaper = (function() {
       return require("@/assets/wallpaper/" + wallpaperSeleted);
     })();
-
+    setInterval(() => {
+      this.time =  moment().format("a h:mm")
+    }, 1000);
   }
 };
 </script>

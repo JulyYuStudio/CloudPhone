@@ -21,4 +21,8 @@
     "_id": 5,
     "name": "相机",
     "link": "/camera"
+}, {
+    "_id": 6,
+    "name": "地图",
+    "link": "/map"
 }]

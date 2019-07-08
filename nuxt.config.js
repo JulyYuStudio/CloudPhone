@@ -42,7 +42,8 @@ module.exports = {
     plugins: [
         '@/plugins/i18n',
         '@/plugins/vant-ui',
-        { src: '@/plugins/axios.ts', ssr: false }
+        { src: '@/plugins/axios.ts', ssr: false },
+        '@/plugins/amap'
     ],
     /*
      ** Nuxt.js modules

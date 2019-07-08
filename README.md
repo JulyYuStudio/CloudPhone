@@ -24,3 +24,5 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 ## Log
 * 19/07/05
 壁纸设置替换功能，增加AppIcon（遗留问题：正式部署壁纸文件查找失败）
+* 19/07/08
+增加地图显示功能（使用高德地图实现）

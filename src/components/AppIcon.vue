@@ -38,5 +38,6 @@ export default {
   text-align: center;
   color: whitesmoke;
   background: rgb(255, 255, 255);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.253);  
 }
 </style>
