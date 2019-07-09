@@ -20,7 +20,7 @@ export default {
         english: "English"
     },
     home: {
-        home: '主页',
-        back: '返回'
+        home: 'home',
+        back: 'back'
     }
 }

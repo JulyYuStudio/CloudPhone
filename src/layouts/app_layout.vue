@@ -5,8 +5,8 @@
         <nuxt  />
       </div>
       <van-tabbar :route="false">
-        <van-tabbar-item name="back" icon="arrow-left" :replace="true" to="/">Back</van-tabbar-item>
-        <van-tabbar-item name="home" icon="home-o" @click="goHome" :replace="true" to="/">Home</van-tabbar-item>
+        <van-tabbar-item :name="$t('home.home')" icon="arrow-left" :replace="true" to="/">Back</van-tabbar-item>
+        <van-tabbar-item :name="$t('home.back')" icon="home-o" @click="goHome" :replace="true" to="/">Home</van-tabbar-item>
       </van-tabbar>
     </div>
   </transition>

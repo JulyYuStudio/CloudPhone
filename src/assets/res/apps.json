@@ -16,13 +16,16 @@
 }, {
     "_id": 4,
     "name": "app.setting",
-    "link": "/settings"
+    "link": "/settings",
+    "icon": "app/ic_app_settings.png"
 }, {
     "_id": 5,
     "name": "app.camera",
-    "link": "/camera"
+    "link": "/camera",
+    "icon": "app/ic_app_camera.png"
 }, {
     "_id": 6,
     "name": "app.map",
-    "link": "/map"
+    "link": "/map",
+    "icon": "app/ic_app_map.png"
 }]
