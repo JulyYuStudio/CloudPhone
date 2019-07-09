@@ -28,4 +28,9 @@
     "name": "app.map",
     "link": "/map",
     "icon": "app/ic_app_map.png"
+}, {
+    "_id": 7,
+    "name": "app.map",
+    "link": "/demo",
+    "icon": "app/ic_app_map.png"
 }]
