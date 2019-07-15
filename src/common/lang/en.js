@@ -5,7 +5,8 @@ export default {
         jay: 'Jay',
         setting: "Settings",
         camera: "Camera",
-        map: "Map"
+        map: "Map",
+        clock: "Clock"
     },
     settings: {
         wallpaper: 'Wallpaper',
@@ -17,7 +18,8 @@ export default {
         system: 'About System',
         me: 'About Me',
         chinese: "中文",
-        english: "English"
+        english: "English",
+        currentWallpaper: '当前壁纸'
     },
     home: {
         home: 'home',

@@ -1,10 +1,7 @@
 <template>
   <div>
-    <AppToolBar title="壁纸"/>
-    <!-- <div class='index-bg'>
-        <div class='index-bg' :style="'backgroundImage: url(' + wallpapers[0] + ')'" />
-    </div>-->
-    <div>
+    <AppToolBar :title="this.$route.query.title"/>
+    <div class="setting-menu-child">
       <van-list>
         <van-cell style="height:300px;" v-for="(wallpaper,index) in wallpapers" :key="index">
           <div
@@ -12,7 +9,9 @@
             class="wallpaper-cell"
             :click="onSelectWallPaper"
             :style="'backgroundImage: url(' + wallpaper + ')'"
-          />
+          >
+            <div class="wallpaper_current" v-if="currentWallpaper(wallpaper)">{{$t('settings.currentWallpaper')}}</div>
+          </div>
         </van-cell>
       </van-list>
     </div>
@@ -53,6 +52,9 @@ export default {
           this.$toast("更换壁纸成功");
           this.$router.replace("/");
         });
+    },
+    currentWallpaper(wallpaper){
+       return wallpaper.indexOf(this.$store.state.wallpaper) != -1
     }
   },
   components: {
@@ -67,5 +69,13 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+.wallpaper_current{
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 </style>

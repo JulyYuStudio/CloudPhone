@@ -5,7 +5,7 @@
         <nuxt  />
       </div>
       <van-tabbar :route="false">
-        <van-tabbar-item :name="$t('home.home')" icon="arrow-left" :replace="true" to="/">Back</van-tabbar-item>
+        <van-tabbar-item :name="$t('home.home')" icon="arrow-left" :replace="true" @click="back">Back</van-tabbar-item>
         <van-tabbar-item :name="$t('home.back')" icon="home-o" @click="goHome" :replace="true" to="/">Home</van-tabbar-item>
       </van-tabbar>
     </div>
@@ -20,6 +20,9 @@ export default {
   methods: {
     goHome() {
       this.$store.dispatch("gankio/resetAll").then(data => {});
+    },
+    back(){
+      this.$router.go(-1); 
     }
   }
 };

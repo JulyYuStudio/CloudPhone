@@ -5,7 +5,10 @@ export default {
         jay: 'Jay',
         setting: "设置",
         camera: "相机",
-        map: "地图"
+        map: "地图",
+        demo: "Demo",
+        chat: "WeChat",
+        clock: "时钟"
     },
     settings: {
         wallpaper: '壁纸',
@@ -17,7 +20,8 @@ export default {
         system: '关于系统',
         me: '关于我',
         chinese: "中文",
-        english: "English"
+        english: "English",
+        currentWallpaper: '当前壁纸'
     },
     home: {
         home: '主页',

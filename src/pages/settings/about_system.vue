@@ -35,14 +35,3 @@ export default {
 };
 </script>
 
-<style>
-.setting-menu-child {
-  border: 2px solid grey;
-  padding: 2px;
-  border-radius: 5px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 20px;
-  margin-bottom: 60px;
-}
-</style>

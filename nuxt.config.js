@@ -35,7 +35,8 @@ module.exports = {
      ** Global CSS
      */
     css: [
-        'vant/lib/index.css'
+        'vant/lib/index.css',
+        '~/css/main.css'
     ],
     /*
      ** Plugins to load before mounting the App

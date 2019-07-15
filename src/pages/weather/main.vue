@@ -46,7 +46,7 @@
         v-for="(data,index) in weather.data.slice(0,5)"
         v-bind:key="index"
       >
-        <div>{{index == 0 ? data.day.slice(3,4) : data.day.slice(0,2)}}</div>
+        <div>{{index == 0 ? data.day.slice(4,6) : data.day.slice(0,3)}}</div>
         <div>
           <img class="weather-small-icon" :src="smallIcons[weatherType.indexOf(data.wea_img)]" />
         </div>

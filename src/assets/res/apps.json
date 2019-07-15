@@ -30,7 +30,17 @@
     "icon": "app/ic_app_map.png"
 }, {
     "_id": 7,
-    "name": "app.map",
+    "name": "app.demo",
     "link": "/demo",
+    "icon": "app/ic_app_map.png"
+}, {
+    "_id": 8,
+    "name": "app.chat",
+    "link": "/chat",
+    "icon": "app/ic_app_map.png"
+}, {
+    "_id": 9,
+    "name": "app.clock",
+    "link": "/clock",
     "icon": "app/ic_app_map.png"
 }]
