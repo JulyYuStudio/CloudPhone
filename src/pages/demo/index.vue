@@ -19,6 +19,9 @@
     <p>Message is: {{ message }}</p>
     <input type="checkbox" id="checkbox" v-model="checked" />
     <label for="checkbox">{{ checked }}</label>
+    <div>HAHAHAHAHAH</div>
+        <div v-if="this.$route.query.title == 'true'">SHOW ME</div>
+     <nuxt-link to="/demo/test">Next</nuxt-link>
   </div>
 </template>
 
@@ -53,6 +56,9 @@ export default {
     },
     tip(){
       console.log("enlarge-text")
+    },
+    next(){
+
     }
   }
 };
