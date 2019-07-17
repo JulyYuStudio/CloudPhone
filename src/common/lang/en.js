@@ -6,7 +6,8 @@ export default {
         setting: "Settings",
         camera: "Camera",
         map: "Map",
-        clock: "Clock"
+        clock: "Clock",
+        calculator: "Calculator"
     },
     settings: {
         wallpaper: 'Wallpaper',

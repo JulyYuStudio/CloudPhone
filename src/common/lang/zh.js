@@ -8,7 +8,8 @@ export default {
         map: "地图",
         demo: "Demo",
         chat: "WeChat",
-        clock: "时钟"
+        clock: "时钟",
+        calculator: "计算器"
     },
     settings: {
         wallpaper: '壁纸',
