@@ -119,13 +119,11 @@ export default {
       );
     },
     isPositiveNum() {
-      var value = "";
       if (this.tag == "value1") {
-        value = this.value1;
-      } else {
-        value = this.value2;
+         this.value1 = this.positiveNum(this.value1);
+      } else if(this.tag == "value2"){
+         this.value2 = this.positiveNum(this.value2);
       }
-      this.positiveNum(value);
     },
     positiveNum(value) {
       if (value > 0) {
@@ -133,8 +131,11 @@ export default {
       } else {
         value = value.replace("-", "");
       }
+      console.log("positiveNum " + value)
+      return value;
     },
     calculation() {
+      if(this.tag == "value1") return;
       var result = "";
       switch (this.operator) {
         case "x":

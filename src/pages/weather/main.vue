@@ -180,8 +180,6 @@ export default {
   height: 50px;
   width: 50px;
 }
-.weather-air-level {
-}
 
 .weather-item-box {
   margin-top: 10px;

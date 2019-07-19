@@ -7,7 +7,7 @@ export default {
         camera: "相机",
         map: "地图",
         demo: "Demo",
-        chat: "WeChat",
+        chat: "微信",
         clock: "时钟",
         calculator: "计算器"
     },
@@ -27,5 +27,8 @@ export default {
     home: {
         home: '主页',
         back: '返回'
+    },
+    chat: {
+        input_placeholder: '告诉我你想知道的...',
     }
 }

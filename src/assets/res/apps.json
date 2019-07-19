@@ -47,5 +47,5 @@
     "_id": 10,
     "name": "app.calculator",
     "link": "/calculator",
-    "icon": "app/ic_app_map.png"
+    "icon": "app/ic_app_calculator.png"
 }]

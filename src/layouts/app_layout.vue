@@ -2,11 +2,22 @@
   <transition name="slide-fade">
     <div class="parent">
       <div class="content">
-        <nuxt  />
+        <nuxt />
       </div>
-      <van-tabbar :route="false">
-        <van-tabbar-item :name="$t('home.home')" icon="arrow-left" :replace="true" @click="back">Back</van-tabbar-item>
-        <van-tabbar-item :name="$t('home.back')" icon="home-o" @click="goHome" :replace="true" to="/">Home</van-tabbar-item>
+      <van-tabbar :route="false" class="tabbar-bottom">
+        <van-tabbar-item
+          :name="$t('home.home')"
+          icon="arrow-left"
+          :replace="true"
+          @click="back"
+        >Back</van-tabbar-item>
+        <van-tabbar-item
+          :name="$t('home.back')"
+          icon="home-o"
+          @click="goHome"
+          :replace="true"
+          to="/"
+        >Home</van-tabbar-item>
       </van-tabbar>
     </div>
   </transition>
@@ -21,8 +32,8 @@ export default {
     goHome() {
       this.$store.dispatch("gankio/resetAll").then(data => {});
     },
-    back(){
-      this.$router.go(-1); 
+    back() {
+      this.$router.go(-1);
     }
   }
 };
@@ -30,10 +41,10 @@ export default {
 
 <style>
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
@@ -47,13 +58,21 @@ body {
 }
 .parent {
   width: 100%;
+  height: 100%;
 }
 .content {
-  width: 100%; /*必须*/
-  height: 100%;
-  top:0px;
-  bottom: 50px;
+  width: 100%;
+  overflow: auto;
   position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 50px;
+}
+.tabbar-bottom {
+  width: 100%;
+  position: absolute;
+  z-index: 200;
+  bottom: 0;
 }
 </style>
 
