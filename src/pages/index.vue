@@ -8,8 +8,8 @@
       <van-grid class="index-grid" :gutter="0" :clickable="true" :border="false" :column-num="3">
         <van-grid-item
           class="index-grid-item"
-          v-for="app in apps"
-          :key="app._id"
+          v-for="(app,index) in apps"
+          :key="index"
           :to="{path:app.link,query:{title: app.name}}"
         >
           <AppIcon :app="app" />

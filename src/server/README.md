@@ -1,0 +1,1 @@
+//"dev": "cross-env NODE_ENV=development nodemon src/server/index.js --watch server",

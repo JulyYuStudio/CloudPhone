@@ -2,9 +2,9 @@
 // const path = require('path')
 // const PostCompilePlugin = require('webpack-post-compile-plugin')
 // const TransformModulesPlugin = require('webpack-transform-modules-plugin')
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
     router: {
-        base: '/<repository-name>/',
+        base: '/Jay-FrontEnd/',
         middleware: 'i18n'
     }
 } : {}
@@ -79,6 +79,10 @@ module.exports = {
         },
         '/large': {
             target: 'https://ww1.sinaimg.cn',
+        },
+
+        '/openapi': {
+            target: 'http://openapi.tuling123.com',
         }
     },
 

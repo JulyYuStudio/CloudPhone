@@ -6,6 +6,8 @@ export default {
         setting: "Settings",
         camera: "Camera",
         map: "Map",
+        demo: "Demo",
+        chat: "微信",
         clock: "Clock",
         calculator: "Calculator"
     },
@@ -25,5 +27,8 @@ export default {
     home: {
         home: 'home',
         back: 'back'
+    },
+    chat: {
+        input_placeholder: '告诉我你想知道的...',
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-         <van-nav-bar :title="title" />
+         <van-nav-bar  :title="title" />
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
 
     props: {
-        title: ""
+        title: "",
     }
 }
 </script>

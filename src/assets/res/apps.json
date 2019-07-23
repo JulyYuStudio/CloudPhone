@@ -1,50 +1,36 @@
 [{
-    "_id": 1,
     "name": "app.gankIO",
     "link": "/gankio",
     "icon": "app/ic_app_gank.jpeg"
 }, {
-    "_id": 2,
-    "name": "app.jay",
-    "link": "/jay",
-    "icon": "app/ic_app_jay.jpg"
-}, {
-    "_id": 3,
     "name": "app.weather",
     "link": "/weather",
     "icon": "weather/weather_icon.png"
 }, {
-    "_id": 4,
     "name": "app.setting",
     "link": "/settings",
     "icon": "app/ic_app_settings.png"
 }, {
-    "_id": 5,
     "name": "app.camera",
     "link": "/camera",
     "icon": "app/ic_app_camera.png"
 }, {
-    "_id": 6,
     "name": "app.map",
     "link": "/map",
     "icon": "app/ic_app_map.png"
 }, {
-    "_id": 7,
     "name": "app.demo",
     "link": "/demo",
     "icon": "app/ic_app_map.png"
 }, {
-    "_id": 8,
     "name": "app.chat",
     "link": "/chat",
     "icon": "app/ic_app_map.png"
 }, {
-    "_id": 9,
     "name": "app.clock",
     "link": "/clock",
     "icon": "app/ic_app_map.png"
 }, {
-    "_id": 10,
     "name": "app.calculator",
     "link": "/calculator",
     "icon": "app/ic_app_calculator.png"

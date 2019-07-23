@@ -1,15 +1,17 @@
 {
     "name": "Jay",
     "version": "1.0.0",
-    "description": "My superb Nuxt.js project",
+    "description": "Web Cloud Smart Desktop",
     "author": "yuhaocan",
     "private": true,
     "scripts": {
-        "dev": "cross-env NODE_ENV=development nodemon src/server/index.js --watch server",
+        "dev": "nuxt -p 4000",
         "build": "nuxt build",
         "start": "cross-env NODE_ENV=production node src/server/index.js",
         "generate": "nuxt generate",
-        "build:gh": "cross-env NODE_ENV=gh node src/server/index.js"
+        "build:gh": "NODE_ENV=gh nuxt build",
+        "generate:gh": "NODE_ENV=gh nuxt generate",
+        "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.5.4",
@@ -31,6 +33,7 @@
     },
     "devDependencies": {
         "@nuxt/typescript": "^2.8.1",
-        "nodemon": "^1.18.9"
+        "nodemon": "^1.18.9",
+        "push-dir": "^0.4.1"
     }
 }

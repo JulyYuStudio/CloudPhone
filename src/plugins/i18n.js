@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import ZH_LANG from '@/common/lang/zh'
-import EN_LANG from '@/common/lang/en'
+import ZH_LANG from "@/common/lang/zh"
+import EN_LANG from "@/common/lang/en"
 
 
 Vue.use(VueI18n)
