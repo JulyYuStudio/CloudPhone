@@ -29,7 +29,7 @@ export default {
   data: function() {
     return {
       apps: Apps,
-      time: moment().format("a h:mm"),
+      time: moment().format("A h:mm"),
       wallpaper: ""
     };
   },
