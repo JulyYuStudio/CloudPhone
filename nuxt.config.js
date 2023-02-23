@@ -65,6 +65,13 @@ module.exports = {
         // vendor: ['vue-i18n']
 
     },
+    generate: {
+        dir:'dist',
+        subFloders:false
+    },
+    router:{
+        base:'/Nuxt-Jay'
+    },
     axios: {
         proxy: true,
     },
