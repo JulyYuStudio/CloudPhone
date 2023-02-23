@@ -35,5 +35,11 @@
         "@nuxt/typescript": "^2.8.1",
         "nodemon": "^1.18.9",
         "push-dir": "^0.4.1"
-    }
+    },
+    "config": {
+        "nuxt": {
+          "host": "0.0.0.0",
+          "post": 4000
+        }
+      }
 }
