@@ -1,6 +1,6 @@
 export const state = () => ({
     counter: 0,
-    wallpaper: "wallpaper1.jpeg",
+    wallpaper: "",
     locales: ["zh_CN", "en_US"],
     locale: "zh_CN"
 })
@@ -13,9 +13,12 @@ export const mutations = {
         state.counter--
     },
     selectWallPaper(state, data) {
+        console.log("selectWallPaper -----> ", state.wallpaper);
         var length = data.wallpaper.length;
         var index = data.wallpaper.lastIndexOf("/");
-        state.wallpaper = data.wallpaper.substring(index + 1, length)
+        state.wallpaper = data.wallpaper
+        // state.wallpaper = data.wallpaper.substring(index + 1, length)
+        console.log("selectWallPaper -----> ", state.wallpaper);
     },
     setLang(state, locale) {
         console.log("setLang", locale)

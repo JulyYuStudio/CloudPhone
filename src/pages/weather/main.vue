@@ -83,7 +83,7 @@ export default {
     };
   },
   mounted() {
-    this.$axios.$get("/tianqi/api/?version=v1&appid=23035354&appsecret=8YvlPNrz").then(result => {
+    this.$axios.$get("https://www.tianqiapi.com/api/?version=v1&appid=23035354&appsecret=8YvlPNrz").then(result => {
       this.weather = result;
       this.today = result.data[0];
     });

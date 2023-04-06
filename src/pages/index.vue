@@ -40,9 +40,32 @@ export default {
     console.log("mounted wallpaper", this.$store.state.wallpaper);
     console.log("mounted wallpaper", this.wallpaper);
     const wallpaperSeleted = this.$store.state.wallpaper;
-    this.wallpaper = (function() {
-      return require("@/assets/wallpaper/" + wallpaperSeleted);
-    })();
+    var initWallpaper = function(){
+      return (function() {
+      var temps = require
+        .context("@/assets/wallpaper", false, /.(png|jpg|jpeg|gif|bmp|webp)$/)
+        .keys();
+        return temps.map(element => {
+          return require("@/assets/wallpaper/" + element.replace("./", ""));
+        });
+      })();
+    }
+    if(this.$store.state.wallpaper == ""){
+       this.wallpaper = initWallpaper[0];
+    }else{
+      try{
+            this.wallpaper = (function() {
+                require("@/assets/wallpaper/" + wallpaperSeleted);
+              })();
+          }catch(e){
+            this.wallpaper = this.$store.state.wallpaper;
+          }
+    }
+    // this.wallpaper = this.$store.state.wallpaper;
+   
+    // this.wallpaper = (function() {
+    //   return require("@/assets/wallpaper/" + wallpaperSeleted);
+    // })();
     setInterval(() => {
       this.time =  moment().format("a h:mm")
     }, 1000);

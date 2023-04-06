@@ -4,7 +4,7 @@
 // const TransformModulesPlugin = require('webpack-transform-modules-plugin')
 const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
     router: {
-        base: '/Jay-FrontEnd/',
+        base: '/Nuxt-Jay/',
         middleware: 'i18n'
     }
 } : {}
@@ -27,6 +27,10 @@ module.exports = {
         ]
     },
     ...routerBase,
+    router: {
+        base: '/Nuxt-Jay',
+        middleware: 'i18n'
+    },
     /*
      ** Customize the progress-bar color
      */
@@ -66,11 +70,8 @@ module.exports = {
 
     },
     generate: {
-        dir:'dist',
+        dir:'docs',
         subFloders:false
-    },
-    router:{
-        base:'/Nuxt-Jay'
     },
     axios: {
         proxy: true,
@@ -78,18 +79,21 @@ module.exports = {
     proxy: {
         '/tianqi': {
             target: 'https://www.tianqiapi.com',
-            pathRewrite: { '^/tianqi': '' }
+            pathRewrite: { '^/tianqi': '' },
+            changeOrigin: true
         },
         '/gankapi': {
             target: 'https://gank.io', // 代理地址
-            pathRewrite: { '^/gankapi': '' }
+            pathRewrite: { '^/gankapi': '' },
+            changeOrigin: true
         },
         '/large': {
             target: 'https://ww1.sinaimg.cn',
         },
 
         '/openapi': {
-            target: 'http://openapi.tuling123.com',
+            target: 'https://openapi.tuling123.com',
+            changeOrigin: true
         }
     },
 

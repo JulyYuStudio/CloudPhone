@@ -11,6 +11,7 @@ export default function ({
     // let appUrl = "https://www.tianqiapi.com/"
     // $axios.defaults.baseURL = appUrl
     // $axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    // $axios.defaults.baseURL = "https://blog.julyyu.cn";
     $axios.setHeader('Access-Control-Allow-Origin','*');
     $axios.setHeader('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization,\'Origin\',Accept,X-Requested-With');
     $axios.setHeader('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE');
