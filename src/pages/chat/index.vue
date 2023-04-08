@@ -78,7 +78,7 @@ export default {
         });
 
         this.$axios
-          .$post("https://openapi.tuling123.com/api/v2", {
+          .$post("http://openapi.turingapi.com/openapi/api/v2", {
             reqType: 0,
             perception: {
               inputText: {

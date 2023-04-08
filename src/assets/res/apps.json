@@ -1,8 +1,6 @@
-[{
-    "name": "app.gankIO",
-    "link": "/gankio",
-    "icon": "app/ic_app_gank.jpeg"
-}, {
+[
+
+{
     "name": "app.weather",
     "link": "/weather",
     "icon": "weather/weather_icon.png"
