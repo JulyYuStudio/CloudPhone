@@ -3,12 +3,14 @@
 // const PostCompilePlugin = require('webpack-post-compile-plugin')
 // const TransformModulesPlugin = require('webpack-transform-modules-plugin')
 const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
+    target: 'static',
     router: {
-        base: '/Nuxt-Jay/',
+        base: '/Nuxt-Jay',
         middleware: 'i18n'
     }
 } : {}
 module.exports = {
+    target: 'static',
     srcDir: './src',
     mode: 'spa',
     /*
@@ -75,12 +77,26 @@ module.exports = {
     },
     axios: {
         proxy: true,
+        baseURL: 'http://blog.julyyu.cn/Nuxt-Jay/',
+        // proxyHeaders: false,
+        credentials: false,
+        headers:{
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Headers': '*',
+        }
     },
     proxy: {
-        '/tianqi': {
-            target: 'https://www.tianqiapi.com',
-            pathRewrite: { '^/tianqi': '' },
-            changeOrigin: true
+        // '/tianqi': {
+        //     target: 'https://www.tianqiapi.com',
+        //     pathRewrite: { '^/tianqi': '' },
+        //     changeOrigin: true
+        // },
+        '/360Weather':'http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568',
+        '/360': {
+            target: 'http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568',
+            pathRewrite: { '^/360': '' },
+            changeOrigin: true,
+            secure: false,
         },
         '/gankapi': {
             target: 'https://gank.io', // 代理地址
@@ -91,12 +107,13 @@ module.exports = {
             target: 'https://ww1.sinaimg.cn',
         },
 
-        '/openapi': {
-            target: 'http://openapi.turingapi.com/openapi/api/v2',
+        '/chat': {
+            target: 'http://openapi.turingapi.com',
             changeOrigin: true,
             pathRewrite:{ 
-                '^/openapi': ''  // 替换target中的请求地址，也就是说以后你在请求http://api.weatherdt.com/common/XXXXX这个地址的时候直接写成/api即可。
-            }
+                '^/chat': ''  // 替换target中的请求地址，也就是说以后你在请求http://api.weatherdt.com/common/XXXXX这个地址的时候直接写成/api即可。
+            },
+            secure: false,
         }
     },
 

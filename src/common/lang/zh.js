@@ -7,7 +7,7 @@ export default {
         camera: "相机",
         map: "地图",
         demo: "Demo",
-        chat: "微信",
+        chat: "聊天",
         clock: "时钟",
         calculator: "计算器"
     },

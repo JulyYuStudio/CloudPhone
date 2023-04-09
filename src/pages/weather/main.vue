@@ -1,58 +1,63 @@
 <template>
   <div class="weather">
-    <div class="weather-title">
-      <strong>{{weather.city}}</strong>
+    <div class="weather-title" v-if="weather">
+      <strong>{{weather.area[1][0]}}</strong>
     </div>
     <div style="margin-top:20px; margin-bottom:20px;width: 100%; height:1px;background-color:gray"></div>
     <van-swipe :loop="false" :show-indicators="false">
       <van-swipe-item>
-        <div class="weather-box" v-if="weather.data">
+        <div class="weather-box" v-if="weather">
           <div style="width:50%;">
             <!-- <van-icon v-bind:name="getWeatherIcon(weather.data[0].wea_img)"/> -->
             <!-- <van-icon name="~/assets/icon/weather/icon_haze.png"/> -->
             <!-- <img v-bind:src="getWeatherIcon(weather.data[0].wea_img)" /> -->
             <img
               class="weather-big-icon"
-              :src="bigIcons[weatherType.indexOf(weather.data[0].wea_img)]"
+              :src="bigIcons[weatherType.findIndex(function(type){
+                  return weather.realtime.weather.info.includes(type);
+              })]"
             />
           </div>
           <div style="width:1%;" class="weather-line"></div>
 
-          <div class="weather-today" v-if="weather.data">
-            <div style="font-size: 25px;">{{weather.data[0].tem}}</div>
-            <div>{{weather.data[0].wea}}</div>
-            <div>空气质量 {{weather.data[0].air}}</div>
-            <div class="weather-air-level">{{weather.data[0].air_level}}</div>
+          <div class="weather-today" v-if="weather">
+            <div class="weather-air-level">{{weather.realtime.date}}</div>
+            <div class="weather-air-level">{{weather.realtime.weather.temperature + '℃'}}</div>
+            <br/>
+            <div style="font-size: 25px;">{{weather.realtime.weather.feelslike_c}}</div>
+            <div>{{weather.pm25.advice}}</div>
+            <br/>
+            <div>空气质量: {{weather.pm25.quality}}</div>
+             <br/>
+            <div>{{weather.pm25.advice}}</div>
+            <div>{{weather.life.info.wuran[1]}}</div>
+             <br/>
+            <div>{{"运动:"}} {{weather.life.info.yundong[1]}}</div>
+            <div>{{"带伞:"}} {{weather.life.info.daisan[1]}}</div>
+            <div>{{"紫外线:"}} {{weather.life.info.ziwaixian[1]}}</div>
           </div>
+
         </div>
       </van-swipe-item>
-      <van-swipe-item>
-        <div class="weather-box" v-if="weather.data">
-          <div class="weather-today" style="width: 100%;height: 100%">
-            <div>{{today.air_tips}}</div>
-            <div>{{today.index[0].title}} {{today.index[0].level}}</div>
-            <div>{{today.index[0].desc}}</div>
-            <div>{{today.index[5].title}} {{today.index[5].level}}</div>
-            <div>{{today.index[5].desc}}</div>
-            <div>{{today.win[0]}} {{today.win[1]}} {{today.win_speed}}</div>
-          </div>
-        </div>
-      </van-swipe-item>
+
     </van-swipe>
-    <van-row class="weather-item-box" type="flex" v-if="weather.data" justify="space-around">
+    <van-row class="weather-item-box" type="flex" v-if="weather" justify="space-around">
       <van-col
         span="4"
         class="weather-item"
-        v-for="(data,index) in weather.data.slice(0,5)"
+        v-for="(data,index) in weather.weather.slice(0,5)"
         v-bind:key="index"
       >
-        <div>{{index == 0 ? data.day.slice(4,6) : data.day.slice(0,3)}}</div>
+        <div>{{data.date}}</div>
         <div>
-          <img class="weather-small-icon" :src="smallIcons[weatherType.indexOf(data.wea_img)]" />
+          <img class="weather-small-icon" :src="smallIcons[weatherType.findIndex(function(type){
+                  return data.info.day[1].includes(type);
+              })]" />
         </div>
+        <div>{{data.info.day[1]}}</div>
         <div>
-          <span>{{data.tem2.replace('℃','°')}}</span>
-          <strong>{{data.tem1.replace('℃','°')}}</strong>
+          <span>{{data.info.night[2]+ "℃ \~" }}</span>
+          <span>{{data.info.day[2]+ '℃'}}</span>
         </div>
       </van-col>
     </van-row>
@@ -67,15 +72,24 @@ export default {
     return {
       weather: "",
       weatherType: [
-        "xue",
-        "lei",
-        "shachen",
-        "wu",
-        "bingbao",
-        "yun",
-        "yu",
-        "yin",
-        "qing"
+        // "xue",
+        // "lei",
+        // "shachen",
+        // "wu",
+        // "bingbao",
+        // "yun",
+        // "yu",
+        // "yin",
+        // "qing"
+        "雪",
+         "雷",
+          "沙尘",
+           "雾",
+            "冰雹",
+             "云",
+              "雨",
+              "阴",
+               "晴",
       ],
       today: Object,
       bigIcons: [],
@@ -83,10 +97,10 @@ export default {
     };
   },
   mounted() {
-    this.$axios.$get("https://www.tianqiapi.com/api/?version=v1&appid=23035354&appsecret=8YvlPNrz").then(result => {
-      this.weather = result;
-      this.today = result.data[0];
-    });
+    // this.$axios.$get("https://www.tianqiapi.com/api/?version=v1&appid=23035354&appsecret=8YvlPNrz").then(result => {
+    //   this.weather = result;
+    //   this.today = result.data[0];
+    // });
     this.weatherType.forEach((element, index) => {
       this.bigIcons[index] = require("~/assets/icon/weather/" +
         this.getWeatherIcon(element) +
@@ -95,32 +109,68 @@ export default {
         this.getWeatherIcon(element) +
         ".png");
     });
-    // console.log("mounted - mounted", this.weatherType.indexOf("yu"));
-    // console.log(
-    //   "mounted - mounted",
-    //   this.bigIcons[this.weatherType.indexOf("yu")]
-    // );
+
+    this.$axios.$get("/360").then(
+      result => {
+          var content = result.replace("renderData(","");
+          content = content.substr(0,content.length - 1);
+          var json = eval("(" + content + ")");
+          console.log("content", json.life);
+          this.weather = json;
+          this.today = json.life
+      }
+    )
+
+    // this.$ajax({
+    //         type: "GET",
+    //         url: "http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568",
+    //         success: function (res) {
+    //           console.log(res);
+    //         },
+    //       });
+   
   },
   methods: {
     getWeatherIcon(type) {
       switch (type) {
-        case "xue":
+        // case "xue":
+        //   return "icon_snow";
+        // case "lei":
+        //   return "icon_thundershower";
+        // case "shachen":
+        //   return "icon_sandstorm";
+        // case "wu":
+        //   return "icon_foggy";
+        // case "bingbao":
+        //   return "icon_icerain";
+        // case "yun":
+        //   return "icon_cloudy";
+        // case "yu":
+        //   return "icon_heavyrain";
+        // case "yin":
+        //   return "icon_overcast";
+        // case "qing":
+        //   return "icon_sunny";
+        // default:
+        //   return "icon_thundershower";
+
+         case "雪":
           return "icon_snow";
-        case "lei":
+        case "雷":
           return "icon_thundershower";
-        case "shachen":
+        case "沙尘":
           return "icon_sandstorm";
-        case "wu":
+        case "雾":
           return "icon_foggy";
-        case "bingbao":
+        case "冰雹":
           return "icon_icerain";
-        case "yun":
+        case "云":
           return "icon_cloudy";
-        case "yu":
+        case "雨":
           return "icon_heavyrain";
-        case "yin":
+        case "阴":
           return "icon_overcast";
-        case "qing":
+        case "晴":
           return "icon_sunny";
         default:
           return "icon_thundershower";
@@ -131,6 +181,9 @@ export default {
 </script>
 
 <style>
+.weather-air-level{
+  font-size: 25px;
+}
 .weather {
   padding: 20px;
   height: 100%;

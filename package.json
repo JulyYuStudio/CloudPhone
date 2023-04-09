@@ -2,7 +2,8 @@
     "name": "Jay",
     "version": "1.0.0",
     "description": "Web Cloud Smart Desktop",
-    "author": "yuhaocan",
+    "homepage": "http://blog.julyyu.cn/Nuxt-Jay",
+    "author": "julyyu",
     "private": true,
     "scripts": {
         "dev": "nuxt -p 4000",

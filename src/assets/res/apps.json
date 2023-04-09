@@ -4,11 +4,7 @@
     "name": "app.weather",
     "link": "/weather",
     "icon": "weather/weather_icon.png"
-}, {
-    "name": "app.setting",
-    "link": "/settings",
-    "icon": "app/ic_app_settings.png"
-}, {
+},  {
     "name": "app.camera",
     "link": "/camera",
     "icon": "app/ic_app_camera.png"
@@ -19,17 +15,21 @@
 }, {
     "name": "app.demo",
     "link": "/demo",
-    "icon": "app/ic_app_map.png"
+    "icon": "app/ic_app_demo.png"
 }, {
     "name": "app.chat",
     "link": "/chat",
-    "icon": "app/ic_app_map.png"
+    "icon": "app/ic_app_chat.png"
 }, {
     "name": "app.clock",
     "link": "/clock",
-    "icon": "app/ic_app_map.png"
+    "icon": "app/ic_app_clock.png"
 }, {
     "name": "app.calculator",
     "link": "/calculator",
     "icon": "app/ic_app_calculator.png"
+},{
+    "name": "app.setting",
+    "link": "/settings",
+    "icon": "app/ic_app_settings.png"
 }]

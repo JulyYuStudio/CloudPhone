@@ -30,6 +30,7 @@ import demo from "~/components/demo_slot";
 import { Toast } from "vant";
 
 export default {
+  layout: "app_layout",
   components: {
     demo
   },

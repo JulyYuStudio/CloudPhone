@@ -30,7 +30,7 @@ export default {
     return {
       apps: Apps,
       time: moment().format("A h:mm"),
-      wallpaper: ""
+      wallpaper: require("@/assets/wallpaper/wallpaper1.jpeg")
     };
   },
   computed: {
@@ -51,7 +51,7 @@ export default {
       })();
     }
     if(this.$store.state.wallpaper == ""){
-       this.wallpaper = initWallpaper[0];
+       this.wallpaper = require("@/assets/wallpaper/wallpaper1.jpeg");
     }else{
       try{
             this.wallpaper = (function() {
@@ -67,7 +67,7 @@ export default {
     //   return require("@/assets/wallpaper/" + wallpaperSeleted);
     // })();
     setInterval(() => {
-      this.time =  moment().format("a h:mm")
+      this.time =  moment().format("A h:mm")
     }, 1000);
   }
 };

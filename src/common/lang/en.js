@@ -7,7 +7,7 @@ export default {
         camera: "Camera",
         map: "Map",
         demo: "Demo",
-        chat: "微信",
+        chat: "Chat",
         clock: "Clock",
         calculator: "Calculator"
     },
@@ -20,15 +20,15 @@ export default {
         github: 'Github',
         system: 'About System',
         me: 'About Me',
-        chinese: "中文",
+        chinese: "Chinese",
         english: "English",
-        currentWallpaper: '当前壁纸'
+        currentWallpaper: 'CurrentWallpaper'
     },
     home: {
         home: 'home',
         back: 'back'
     },
     chat: {
-        input_placeholder: '告诉我你想知道的...',
+        input_placeholder: 'Tell Me what you want say...',
     }
 }

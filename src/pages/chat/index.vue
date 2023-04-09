@@ -23,6 +23,7 @@
 import ChatItemContent from "~/components/chat_content";
 import { Component, Vue } from "vue-property-decorator";
 export default {
+  
   data() {
     return {
       msgs: [
@@ -78,7 +79,7 @@ export default {
         });
 
         this.$axios
-          .$post("http://openapi.turingapi.com/openapi/api/v2", {
+          .$post("/chat/openapi/api/v2", {
             reqType: 0,
             perception: {
               inputText: {
