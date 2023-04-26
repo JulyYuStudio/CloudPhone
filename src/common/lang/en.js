@@ -9,7 +9,8 @@ export default {
         demo: "Demo",
         chat: "Chat",
         clock: "Clock",
-        calculator: "Calculator"
+        calculator: "Calculator",
+        ar:"AR",
     },
     settings: {
         wallpaper: 'Wallpaper',

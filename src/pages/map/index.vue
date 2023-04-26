@@ -1,22 +1,22 @@
 <template>
   <div class="amap-page-container">
-    <AppToolBar :title="$t(`${this.$route.query.title}`)" />
     <el-amap vid="amap" :amap-manager="amapManager" :plugin="plugin" :zoom="zoom" class="amap"></el-amap>
   </div>
 </template>
 
 <style>
-.amap {
-  height: 100%;
-}
+
 .amap-page-container {
+  position: absolute;
+  width: 100%;
   height: 100%;
+  top: 0px;
+  bottom: 0px;
 }
 </style>
 
 
 <script>
-import AppToolBar from "~/components/app_toolbar";
 import { AMapManager } from "vue-amap";
 let amapManager = new AMapManager();
 export default {
@@ -50,9 +50,6 @@ export default {
         }
       ]
     };
-  },
-  components: {
-    AppToolBar
   }
 };
 </script>

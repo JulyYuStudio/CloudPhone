@@ -1,11 +1,12 @@
 <template>
   <div class="chat">
-    <van-nav-bar
+     <!-- <van-nav-bar
       @click-left="onClickLeft"
       :fixed="true"
       :title="$t(`${this.$route.query.title}`)"
       left-arrow
     />
+    -->
     <ul class="chat-list">
       <li class="chat-list-item" v-for="(item,index) in msgs" :key="index">
         <ChatItemContent :type="'left'" :item="item" />
@@ -23,38 +24,30 @@
 import ChatItemContent from "~/components/chat_content";
 import { Component, Vue } from "vue-property-decorator";
 export default {
-  
+     layout: 'app_layout',
   data() {
     return {
       msgs: [
         {
-          content: "222222",
+          content: "你好，我是图灵机器人。欢迎和我交流",
           type: "left"
         },
         {
-          content: "111111",
+          content: "有什么问题都可以问问我。",
           type: "left"
         },
         {
-          content: "111111",
+          content: "虽然有些问题我可能答不上来。",
           type: "left"
         },
         {
-          content: "111111",
+          content: "你好，我是JAY。",
           type: "right"
         },
         {
-          content: "111111",
+          content: "JAY，你好~ 初次见面请多多关照",
           type: "left"
         },
-        {
-          content: "111111",
-          type: "right"
-        },
-        {
-          content: "111111",
-          type: "left"
-        }
       ],
       msg: ""
     };
@@ -97,8 +90,18 @@ export default {
                 content:  result.results[0].values.text,
                 type: "left"
               });
+            }else{
+              this.msgs.push({
+                content:  "不好意思，好像网络出现问题，我无法正常和你交谈~",
+                type: "left"
+              });
             }
-          });
+          }).catch((error) => {
+						this.msgs.push({
+                content:  "不好意思，好像网络出现问题，我无法正常和你交谈~",
+                type: "left"
+              });
+					});
         this.msg = "";
       }
       console.log(
@@ -123,7 +126,7 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
-  bottom: 0px;
+  bottom: 50px;
   background: rgb(245, 240, 240);
 }
 
@@ -145,7 +148,7 @@ export default {
 
 .chat-input {
   position: fixed;
-  bottom: 0px;
+  bottom: 50px;
   display: flex;
   background-color: white;
   width: 100%;

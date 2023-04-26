@@ -1,4 +1,5 @@
 <template>
+  <div class="page-container">
   <div class="main">
     <div class="display-board">{{inputBoxValue()}}</div>
     <table class="key-board">
@@ -32,12 +33,14 @@
       </tr>
     </table>
   </div>
+   </div>
 </template>
 
 <script>
 import $ from "jquery";
 export default {
   layout: "app_layout",
+  name: "calculator",
   data() {
     return {
       value1: "0",
@@ -214,7 +217,13 @@ export default {
 </script>
 
 <style>
+.page-container {
+  height: 100%;
+}
 .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
   padding: 5px 10px;
   display: fixed;
   background-color: blanchedalmond;

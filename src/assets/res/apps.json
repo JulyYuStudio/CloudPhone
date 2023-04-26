@@ -12,6 +12,10 @@
     "name": "app.map",
     "link": "/map",
     "icon": "app/ic_app_map.png"
+},{
+    "name": "app.ar",
+    "link": "/ar",
+    "icon": "app/ic_app_ar.png"
 }, {
     "name": "app.demo",
     "link": "/demo",

@@ -13,6 +13,23 @@ module.exports = {
     target: 'static',
     srcDir: './src',
     mode: 'spa',
+    module: {
+        rules:[
+            {
+                test: /\.(glb|gltf)$/,
+                use:
+                [
+                    {
+                        loader: 'file-loader',
+                        options:
+                        {
+                            outputPath: 'assets/models/'
+                        }
+                    }
+                ]
+            },
+        ]
+      },
     /*
      ** Headers of the page
      */
@@ -51,6 +68,8 @@ module.exports = {
         '@/plugins/i18n',
         '@/plugins/vant-ui',
         { src: '@/plugins/axios.ts', ssr: false },
+        { src: "@/plugins/model-viewer",ssr: false,mode: "client"},
+        "@/plugins/model-viewer",
         '@/plugins/amap'
     ],
     /*

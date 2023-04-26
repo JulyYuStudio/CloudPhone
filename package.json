@@ -16,6 +16,9 @@
         "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
     },
     "dependencies": {
+        "lit": "2.7.2",
+        "three": "0.151.2",
+        "@google/model-viewer": "v3.1.0",
         "@nuxtjs/axios": "^5.5.4",
         "axios": "^0.19.0",
         "cross-env": "^5.2.0",
@@ -40,8 +43,8 @@
     },
     "config": {
         "nuxt": {
-          "host": "0.0.0.0",
-          "post": 4000
+            "host": "0.0.0.0",
+            "post": 4000
         }
-      }
+    }
 }

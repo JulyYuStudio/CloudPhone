@@ -9,7 +9,8 @@ export default {
         demo: "Demo",
         chat: "聊天",
         clock: "时钟",
-        calculator: "计算器"
+        calculator: "计算器",
+        ar:"AR",
     },
     settings: {
         wallpaper: '壁纸',

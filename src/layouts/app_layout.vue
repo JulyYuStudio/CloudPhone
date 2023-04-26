@@ -1,6 +1,8 @@
+<!-- 公共模版 头部【名称】 名称  底部【回退】【返回首页】-->
 <template>
   <transition name="slide-fade">
     <div class="parent">
+      <AppToolBar :title="$t(`${this.$route.query.title}`)" />
       <div class="content">
         <nuxt />
       </div>
@@ -24,6 +26,7 @@
 </template>
 
 <script>
+import AppToolBar from "~/components/app_toolbar";
 export default {
   props: {
     title: String
@@ -35,6 +38,9 @@ export default {
     back() {
       this.$router.go(-1);
     }
+  },
+   components: {
+    AppToolBar
   }
 };
 </script>
@@ -65,7 +71,7 @@ body {
   overflow: auto;
   position: absolute;
   z-index: 10;
-  top: 0;
+  top: 46px;
   bottom: 50px;
 }
 .tabbar-bottom {

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AppToolBar :title="$t('app.setting')" />
     <div>
       <div class="setting-menu-child">
         <van-cell-group>
@@ -27,12 +26,8 @@
 </template>
 
 <script>
-import AppToolBar from "~/components/app_toolbar";
 export default {
   layout: "app_layout",
-  components: {
-    AppToolBar
-  },
   methods:{
     goTo(link,title){
 
