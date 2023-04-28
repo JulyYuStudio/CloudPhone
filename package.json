@@ -1,8 +1,8 @@
 {
-    "name": "Jay",
+    "name": "nuxt_jay",
     "version": "1.0.0",
     "description": "Web Cloud Smart Desktop",
-    "homepage": "http://blog.julyyu.cn/Nuxt-Jay",
+    "homepage": "https://github.com/lifelikejuly/Nuxt-Jay",
     "author": "julyyu",
     "private": true,
     "scripts": {
