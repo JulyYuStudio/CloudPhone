@@ -13,7 +13,7 @@
         "build:gh": "NODE_ENV=gh nuxt build",
         "generate:gh": "NODE_ENV=gh nuxt generate",
         "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
-        "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+        "deploy": "nuxt build push-dir --dir=/docs --branch=gh-pages --cleanup"
     },
     "dependencies": {
         "lit": "2.7.2",
