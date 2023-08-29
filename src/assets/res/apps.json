@@ -4,6 +4,11 @@
     "name": "app.weather",
     "link": "/weather",
     "icon": "weather/weather_icon.png"
+},
+{
+    "name": "app.base64",
+    "link": "/base64",
+    "icon": "weather/weather_icon.png"
 },  {
     "name": "app.camera",
     "link": "/camera",

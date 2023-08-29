@@ -11,6 +11,7 @@ export default {
         clock: "Clock",
         calculator: "Calculator",
         ar:"AR",
+        base64:"base64",
     },
     settings: {
         wallpaper: 'Wallpaper',
@@ -31,5 +32,11 @@ export default {
     },
     chat: {
         input_placeholder: 'Tell Me what you want say...',
+    },
+    base64: {
+        base64_img: 'base64 to image',
+        img_base64:'Image to base64',
+        copy:'copy',
+        input_placeholder: 'Input picture base64, such as data:image/jpeg;base64,xxxxx',
     }
 }

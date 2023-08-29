@@ -11,6 +11,7 @@ export default {
         clock: "时钟",
         calculator: "计算器",
         ar:"AR",
+        base64:"base64",
     },
     settings: {
         wallpaper: '壁纸',
@@ -31,5 +32,11 @@ export default {
     },
     chat: {
         input_placeholder: '告诉我你想知道的...',
+    },
+    base64:{
+        base64_img:'base64转图片',
+        img_base64:'图片转base64',
+        copy:'复制',
+        input_placeholder: '输入图片base64，例如data:image/jpeg;base64,xxxxx',
     }
 }

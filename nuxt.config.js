@@ -77,7 +77,8 @@ module.exports = {
      */
     modules: [
         '@nuxtjs/axios',
-        '@nuxtjs/proxy'
+        '@nuxtjs/proxy',
+        'nuxt-clipboard'
     ],
     /*
      ** Build configuration
@@ -135,5 +136,7 @@ module.exports = {
             secure: false,
         }
     },
-
+    clipboard: {
+        autoSetContainer: true
+    }
 }
