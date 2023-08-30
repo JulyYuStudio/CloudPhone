@@ -12,13 +12,14 @@ export default {
         calculator: "计算器",
         ar:"AR",
         base64:"图片Base",
+        qrcode:"二维码"
     },
     settings: {
         wallpaper: '壁纸',
         desktop: '桌面',
         lanuage: '语言',
         blog: '博客',
-        weibo: '微博',
+        juejin: '掘金',
         github: 'Github',
         system: '关于系统',
         me: '关于我',

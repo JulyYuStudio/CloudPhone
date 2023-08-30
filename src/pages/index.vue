@@ -10,7 +10,7 @@
           class="index-grid-item"
           v-for="(app,index) in apps"
           :key="index"
-          :to="{path:app.link,query:{title: app.name}}"
+          :to="{path:app.link,query:{title: $t(app.name)}}"
         >
           <AppIcon :app="app" />
         </van-grid-item>

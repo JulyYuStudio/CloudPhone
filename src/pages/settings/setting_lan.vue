@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AppToolBar :title="this.$route.query.title" />
     <div class="setting-menu-child">
       <van-radio-group v-model="radio">
         <van-cell-group>

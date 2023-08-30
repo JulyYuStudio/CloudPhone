@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AppToolBar :title="this.$route.query.title"/>
     <div class="setting-menu-child">
       <van-list>
         <van-cell style="height:300px;" v-for="(wallpaper,index) in wallpapers" :key="index">
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-import AppToolBar from "~/components/app_toolbar";
 export default {
   layout: "app_layout",
   data() {
@@ -56,9 +54,6 @@ export default {
     currentWallpaper(wallpaper){
        return wallpaper.indexOf(this.$store.state.wallpaper) != -1
     }
-  },
-  components: {
-    AppToolBar
   }
 };
 </script>

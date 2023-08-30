@@ -7897,6 +7897,11 @@ uppercamelcase@^1.1.0:
   dependencies:
     camelcase "^1.2.1"
 
+uqrcodejs@4.0.7:
+  version "4.0.7"
+  resolved "https://registry.npmmirror.com/uqrcodejs/-/uqrcodejs-4.0.7.tgz#a69dbccefd9ac1fb72f0ba70e77effea8d990481"
+  integrity sha512-84+aZmD2godCVI+93lxE3YUAPNY8zAJvNA7xRS7R7U+q57KzMDepBSfNCwoRUhWOfR6eHFoAOcHRPwsP6ka1cA==
+
 uri-js@^4.2.2:
   version "4.2.2"
   resolved "https://registry.npmjs.org/uri-js/-/uri-js-4.2.2.tgz"

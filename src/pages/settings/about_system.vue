@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AppToolBar :title="this.$route.query.title" />
     <div class="setting-menu-child">
       <van-cell-group>
         <van-cell title="appCodeName" :value="navigator.appCodeName" />

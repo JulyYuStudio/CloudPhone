@@ -2,7 +2,7 @@
 <template>
   <transition name="slide-fade">
     <div class="parent">
-      <AppToolBar :title="$t(`${this.$route.query.title}`)" />
+      <AppToolBar :title="this.$route.query.title" />
       <div class="content">
         <nuxt />
       </div>

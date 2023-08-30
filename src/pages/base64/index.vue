@@ -1,3 +1,5 @@
+
+
 <template>
     <div>
         <van-tag type="success" class="base-tag-child">{{ $t('base64.img_base64') }}</van-tag>
@@ -93,3 +95,4 @@ export default {
      max-height: 400px !important;
  }
 </style>
+

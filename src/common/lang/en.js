@@ -12,13 +12,14 @@ export default {
         calculator: "Calculator",
         ar:"AR",
         base64:"ImgBase",
+        qrcode:"QRCode"
     },
     settings: {
         wallpaper: 'Wallpaper',
         desktop: 'Desktop',
         lanuage: 'Lanuage',
         blog: 'Blog',
-        weibo: 'Weibo',
+        juejin: 'JueJin',
         github: 'Github',
         system: 'About System',
         me: 'About Me',
