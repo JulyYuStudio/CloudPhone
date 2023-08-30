@@ -1,15 +1,9 @@
 <template>
- <div class="page-container">
-   <model-viewer 
-    class='ar-index'
-    v-if="isMounted"
-    src='/Nuxt-Jay/models/mini2/source/mini_2.glb'
-    shadow-intensity="1" camera-controls touch-action="pan-y"
-    alt='test'>
-   </model-viewer>
-    </div>
-</div>
-
+  <div class="page-container">
+    <model-viewer class='ar-index' v-if="isMounted" src='/Nuxt-Jay/models/GiftBox_gltf.gltf' shadow-intensity="1"
+      camera-controls touch-action="pan-y" alt='test'>
+    </model-viewer>
+  </div>
 </template>
 
 <script>
@@ -19,20 +13,20 @@
 // import '@google/model-viewer';
 /// src="~/assets/model/man/NeilArmstrong.glb" 
 export default {
-    layout: 'app_layout',
-    name: "viewer-3d",
-    data() {
-      return {
-        // modelSrc:require("@/assets/model/mini2/source/mini_2.glb"),
-        isMounted: false,
-        // src:require("~/assets/model/mini2/source/mini_2.glb")
-      };
+  layout: 'app_layout',
+  name: "viewer-3d",
+  data() {
+    return {
+      // modelSrc:require("@/assets/model/mini2/source/mini_2.glb"),
+      isMounted: false,
+      // src:require("~/assets/model/mini2/source/mini_2.glb")
+    };
   },
-    mounted(){
-        this.isMounted = true;
-    },
-    computed: {
-   }
+  mounted() {
+    this.isMounted = true;
+  },
+  computed: {
+  }
 }
 </script>
 
@@ -40,6 +34,7 @@ export default {
 .page-container {
   height: 100%;
 }
+
 .ar-index {
   position: absolute;
   width: 100%;
@@ -47,6 +42,5 @@ export default {
   top: 0px;
   bottom: 0px;
 }
-
 </style>
 

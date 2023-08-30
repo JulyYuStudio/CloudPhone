@@ -11,7 +11,7 @@ export default {
         clock: "Clock",
         calculator: "Calculator",
         ar:"AR",
-        base64:"base64",
+        base64:"ImgBase",
     },
     settings: {
         wallpaper: 'Wallpaper',

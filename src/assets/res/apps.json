@@ -8,7 +8,7 @@
 {
     "name": "app.base64",
     "link": "/base64",
-    "icon": "weather/weather_icon.png"
+    "icon": "app/ic_app_img_base64.png"
 },  {
     "name": "app.camera",
     "link": "/camera",

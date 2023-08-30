@@ -11,7 +11,7 @@ export default {
         clock: "时钟",
         calculator: "计算器",
         ar:"AR",
-        base64:"base64",
+        base64:"图片Base",
     },
     settings: {
         wallpaper: '壁纸',

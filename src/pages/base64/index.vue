@@ -1,26 +1,31 @@
 <template>
     <div>
-        <van-tag class="base-tag-child">{{$t('base64.img_base64')}}</van-tag>
+        <van-tag type="success" class="base-tag-child">{{ $t('base64.img_base64') }}</van-tag>
         <div class="base-menu-child">
             <van-cell-group>
-                <div class="base-image">
+                <div class="base-center">
                     <van-image height="300px" fit="contain" :src="fieldValue" />
                 </div>
 
                 <div class="base-menu-child">
-                    <van-field type="textarea" @input="getFieldValue"
+                    <van-field type="textarea" v-model="fieldValue" @input="getFieldValue"
                         :placeholder="$t('base64.input_placeholder')" />
                 </div>
             </van-cell-group>
         </div>
-        <van-tag class="base-tag-child">{{$t('base64.base64_img')}}</van-tag>
+        <van-tag type="success" class="base-tag-child">{{ $t('base64.base64_img') }}</van-tag>
         <div class="base-menu-child">
             <van-cell-group>
-                <van-uploader accept="image/*" :max-count="1" v-model="fileList" :after-read="afterRead" />
+                <div class="base-center">
+                    <van-uploader accept="image/*" preview-size="200px" :max-count="1" v-model="fileList"
+                        :after-read="afterRead" />
+                </div>
                 <div v-show='(this.imageBase64 != null && this.imageBase64 != "")'>
                     <div class="base-menu-child">
                         <van-cell :value="imageBase64" />
-                        <van-button type="primary" @click="copy">{{$t('base64.copy')}}</van-button>
+                        <div class="base-center">
+                            <van-button type="primary" @click="copy">{{ $t('base64.copy') }}</van-button>
+                        </div>
                     </div>
                 </div>
 
@@ -42,7 +47,7 @@ export default {
         };
     },
     methods: {
-        isImageBase64(){
+        isImageBase64() {
             return this.imageBase64 != null && this.imageBase64 != "";
         },
         getFieldValue(e) {
@@ -69,7 +74,8 @@ export default {
      font-size: 20px;
  }
 
- .base-image {
+ .base-center {
+     padding: 10px;
      margin: 0 auto;
      text-align: center;
  }
