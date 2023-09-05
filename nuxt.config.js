@@ -5,7 +5,7 @@
 const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
     target: 'static',
     router: {
-        base: '/Cloud-Desktop',
+        base: '/Nuxt-Jay',
         middleware: 'i18n'
     }
 } : {}

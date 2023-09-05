@@ -10,14 +10,11 @@
         "build": "nuxt build",
         "start": "cross-env NODE_ENV=production node src/server/index.js",
         "generate": "nuxt generate",
-        "build:gh": "NODE_ENV=gh nuxt build",
-        "generate:gh": "NODE_ENV=gh nuxt generate",
+        "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
         "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
         "deploy": "nuxt build push-dir --dir=/docs --branch=gh-pages --cleanup"
     },
     "dependencies": {
-        "lit": "2.7.2",
-        "three": "0.151.2",
         "@google/model-viewer": "v3.1.0",
         "@nuxtjs/axios": "^5.5.4",
         "axios": "^0.19.0",
@@ -26,17 +23,19 @@
         "element-ui": "^2.10.0",
         "jquery": "^3.4.1",
         "koa": "^2.6.2",
+        "lit": "2.7.2",
         "moment": "^2.24.0",
         "nuxt": "^2.0.0",
+        "nuxt-clipboard": "0.0.7",
         "postcss": "^7.0.17",
         "qs": "^6.7.0",
+        "three": "0.151.2",
         "ts-node": "^8.3.0",
+        "uqrcodejs": "4.0.7",
         "vant": "^2.0.5",
         "vue-amap": "^0.5.10",
         "vue-i18n": "^8.11.2",
-        "vue-property-decorator": "^8.2.1",
-        "nuxt-clipboard": "0.0.7",
-        "uqrcodejs":"4.0.7"
+        "vue-property-decorator": "^8.2.1"
     },
     "devDependencies": {
         "@nuxt/typescript": "^2.8.1",
