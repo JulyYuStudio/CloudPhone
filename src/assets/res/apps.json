@@ -2,12 +2,7 @@
     {
         "name": "app.qrcode",
         "link": "/qrcode",
-        "icon": "weather/weather_icon.png"
-    },
-    {
-        "name": "app.weather",
-        "link": "/weather",
-        "icon": "weather/weather_icon.png"
+        "icon": "app/ic_app_qrcode.png"
     },
     {
         "name": "app.base64",

@@ -39,5 +39,10 @@ export default {
         img_base64:'图片转base64',
         copy:'复制',
         input_placeholder: '输入图片base64，例如data:image/jpeg;base64,xxxxx',
+    },
+    qrcode:{
+        create_qr:'生成二维码',
+        input_placeholder: '请输入文本内容',
+        history:'历史记录'
     }
 }

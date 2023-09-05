@@ -39,5 +39,10 @@ export default {
         img_base64:'Image to base64',
         copy:'copy',
         input_placeholder: 'Input picture base64, such as data:image/jpeg;base64,xxxxx',
+    },
+    qrcode:{
+        create_qr:'Generate QR code',
+        input_placeholder: 'Please enter text content',
+        history:'history'
     }
 }
