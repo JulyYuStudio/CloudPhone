@@ -72,7 +72,7 @@ export default {
         });
 
         this.$axios
-          .$post("/chat/openapi/api/v2", {
+          .$post("/chat", {
             reqType: 0,
             perception: {
               inputText: {

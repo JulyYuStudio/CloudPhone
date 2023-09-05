@@ -1,9 +1,9 @@
 {
-    "name": "nuxt_jay",
+    "name": "clound_destop",
     "version": "1.0.0",
     "description": "Web Cloud Smart Desktop",
     "homepage": "https://github.com/lifelikejuly/Nuxt-Jay",
-    "author": "julyyu",
+    "author": "July Yu",
     "private": true,
     "scripts": {
         "dev": "nuxt -p 4000",

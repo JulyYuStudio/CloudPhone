@@ -5,6 +5,11 @@
         "icon": "app/ic_app_qrcode.png"
     },
     {
+        "name": "app.weather",
+        "link": "/weather",
+        "icon": "app/ic_app_qrcode.png"
+    },
+    {
         "name": "app.base64",
         "link": "/base64",
         "icon": "app/ic_app_img_base64.png"

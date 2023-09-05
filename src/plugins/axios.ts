@@ -11,7 +11,7 @@ export default function ({
     // let appUrl = "https://www.tianqiapi.com/"
     // $axios.defaults.baseURL = appUrl
     // $axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-    $axios.defaults.baseURL = "http://blog.julyyu.cn/Nuxt-Jay/";
+    // $axios.defaults.baseURL = "http://blog.julyyu.cn/Nuxt-Jay/";
     $axios.setHeader('Access-Control-Allow-Origin','*');
     $axios.setHeader('Access-Control-Allow-Headers', '*');
     $axios.setHeader('Access-Control-Max-Age', '1000');

@@ -5,7 +5,7 @@
 const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
     target: 'static',
     router: {
-        base: '/Nuxt-Jay',
+        base: '/Cloud-Desktop',
         middleware: 'i18n'
     }
 } : {}
@@ -14,22 +14,22 @@ module.exports = {
     srcDir: './src',
     mode: 'spa',
     module: {
-        rules:[
+        rules: [
             {
                 test: /\.(glb|gltf)$/,
                 use:
-                [
-                    {
-                        loader: 'file-loader',
-                        options:
+                    [
                         {
-                            outputPath: 'assets/models/'
+                            loader: 'file-loader',
+                            options:
+                            {
+                                outputPath: 'assets/models/'
+                            }
                         }
-                    }
-                ]
+                    ]
             },
         ]
-      },
+    },
     /*
      ** Headers of the page
      */
@@ -47,7 +47,7 @@ module.exports = {
     },
     ...routerBase,
     router: {
-        base: '/Nuxt-Jay',
+        base: '/Cloud-Desktop',
         middleware: 'i18n'
     },
     /*
@@ -68,7 +68,7 @@ module.exports = {
         '@/plugins/i18n',
         '@/plugins/vant-ui',
         { src: '@/plugins/axios.ts', ssr: false },
-        { src: "@/plugins/model-viewer",ssr: false,mode: "client"},
+        { src: "@/plugins/model-viewer", ssr: false, mode: "client" },
         "@/plugins/model-viewer",
         '@/plugins/amap'
     ],
@@ -87,21 +87,21 @@ module.exports = {
         /*
          ** You can extend webpack config here
          */
-        extend(config, ctx) {},
+        extend(config, ctx) { },
         // vendor: ['vue-i18n']
 
     },
     generate: {
-        dir:'docs',
-        subFloders:false
+        dir: 'docs',
+        subFloders: false
     },
     axios: {
         proxy: true,
-        baseURL: 'http://blog.julyyu.cn/Nuxt-Jay/',
+        // baseURL: 'http://blog.julyyu.cn/Nuxt-Jay/',
         // proxyHeaders: false,
         credentials: false,
-        headers:{
-            'Access-Control-Allow-Origin':'*',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Headers': '*',
         }
     },
@@ -111,7 +111,7 @@ module.exports = {
         //     pathRewrite: { '^/tianqi': '' },
         //     changeOrigin: true
         // },
-        '/360Weather':'http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568',
+        '/360Weather': 'http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568',
         '/360': {
             target: 'http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568',
             pathRewrite: { '^/360': '' },
@@ -128,9 +128,9 @@ module.exports = {
         },
 
         '/chat': {
-            target: 'http://openapi.turingapi.com',
+            target: 'http://openapi.turingapi.com/openapi/api/v2',
             changeOrigin: true,
-            pathRewrite:{ 
+            pathRewrite: {
                 '^/chat': ''  // 替换target中的请求地址，也就是说以后你在请求http://api.weatherdt.com/common/XXXXX这个地址的时候直接写成/api即可。
             },
             secure: false,
@@ -138,5 +138,9 @@ module.exports = {
     },
     clipboard: {
         autoSetContainer: true
+    },
+
+    build: {
+        vendor: ["axios"]
     }
 }
