@@ -1,8 +1,8 @@
 {
-    "name": "clound_destop",
+    "name": "cloud_desktop",
     "version": "1.0.0",
     "description": "Web Cloud Smart Desktop",
-    "homepage": "https://github.com/lifelikejuly/Nuxt-Jay",
+    "homepage": "https://github.com/lifelikejuly/Cloud-Desktop",
     "author": "July Yu",
     "private": true,
     "scripts": {
@@ -12,7 +12,7 @@
         "generate": "nuxt generate",
         "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
         "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
-        "deploy": "nuxt build push-dir --dir=/docs --branch=gh-pages --cleanup"
+        "deploy": "nuxt build push-dir --dir=/docs --branch=master --cleanup"
     },
     "dependencies": {
         "@google/model-viewer": "v3.1.0",

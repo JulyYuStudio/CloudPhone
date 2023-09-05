@@ -5,7 +5,7 @@
 const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
     target: 'static',
     router: {
-        base: '/Nuxt-Jay',
+        base: '/Cloud_Desktop',
         middleware: 'i18n'
     }
 } : {}
@@ -45,11 +45,11 @@ module.exports = {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
-    ...routerBase,
     router: {
-        base: '/Cloud-Desktop',
+        base: '/Cloud_Desktop',
         middleware: 'i18n'
     },
+    ...routerBase,
     /*
      ** Customize the progress-bar color
      */
