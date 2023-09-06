@@ -1,7 +1,7 @@
 <template>
   <div class="weather">
     <div class="weather-title" v-if="weather">
-      <strong>{{weather.area[1][0]}}</strong>
+      <strong>{{ weather.area[1][0] }}</strong>
     </div>
     <div style="margin-top:20px; margin-bottom:20px;width: 100%; height:1px;background-color:gray"></div>
     <van-swipe :loop="false" :show-indicators="false">
@@ -11,30 +11,27 @@
             <!-- <van-icon v-bind:name="getWeatherIcon(weather.data[0].wea_img)"/> -->
             <!-- <van-icon name="~/assets/icon/weather/icon_haze.png"/> -->
             <!-- <img v-bind:src="getWeatherIcon(weather.data[0].wea_img)" /> -->
-            <img
-              class="weather-big-icon"
-              :src="bigIcons[weatherType.findIndex(function(type){
-                  return weather.realtime.weather.info.includes(type);
-              })]"
-            />
+            <img class="weather-big-icon" :src="bigIcons[weatherType.findIndex(function (type) {
+              return weather.realtime.weather.info.includes(type);
+            })]" />
           </div>
           <div style="width:1%;" class="weather-line"></div>
 
           <div class="weather-today" v-if="weather">
-            <div class="weather-air-level">{{weather.realtime.date}}</div>
-            <div class="weather-air-level">{{weather.realtime.weather.temperature + '℃'}}</div>
-            <br/>
-            <div style="font-size: 25px;">{{weather.realtime.weather.feelslike_c}}</div>
-            <div>{{weather.pm25.advice}}</div>
-            <br/>
-            <div>空气质量: {{weather.pm25.quality}}</div>
-             <br/>
-            <div>{{weather.pm25.advice}}</div>
-            <div>{{weather.life.info.wuran[1]}}</div>
-             <br/>
-            <div>{{"运动:"}} {{weather.life.info.yundong[1]}}</div>
-            <div>{{"带伞:"}} {{weather.life.info.daisan[1]}}</div>
-            <div>{{"紫外线:"}} {{weather.life.info.ziwaixian[1]}}</div>
+            <div class="weather-air-level">{{ weather.realtime.date }}</div>
+            <div class="weather-air-level">{{ weather.realtime.weather.temperature + '℃' }}</div>
+            <br />
+            <div style="font-size: 25px;">{{ weather.realtime.weather.feelslike_c }}</div>
+            <div>{{ weather.pm25.advice }}</div>
+            <br />
+            <div>空气质量: {{ weather.pm25.quality }}</div>
+            <br />
+            <div>{{ weather.pm25.advice }}</div>
+            <div>{{ weather.life.info.wuran[1] }}</div>
+            <br />
+            <div>{{ "运动:" }} {{ weather.life.info.yundong[1] }}</div>
+            <div>{{ "带伞:" }} {{ weather.life.info.daisan[1] }}</div>
+            <div>{{ "紫外线:" }} {{ weather.life.info.ziwaixian[1] }}</div>
           </div>
 
         </div>
@@ -42,22 +39,17 @@
 
     </van-swipe>
     <van-row class="weather-item-box" type="flex" v-if="weather" justify="space-around">
-      <van-col
-        span="4"
-        class="weather-item"
-        v-for="(data,index) in weather.weather.slice(0,5)"
-        v-bind:key="index"
-      >
-        <div>{{data.date}}</div>
+      <van-col span="4" class="weather-item" v-for="(data, index) in weather.weather.slice(0, 5)" v-bind:key="index">
+        <div>{{ data.date }}</div>
         <div>
-          <img class="weather-small-icon" :src="smallIcons[weatherType.findIndex(function(type){
-                  return data.info.day[1].includes(type);
-              })]" />
+          <img class="weather-small-icon" :src="smallIcons[weatherType.findIndex(function (type) {
+            return data.info.day[1].includes(type);
+          })]" />
         </div>
-        <div>{{data.info.day[1]}}</div>
+        <div>{{ data.info.day[1] }}</div>
         <div>
-          <span>{{data.info.night[2]+ "℃ \~" }}</span>
-          <span>{{data.info.day[2]+ '℃'}}</span>
+          <span>{{ data.info.night[2] + "℃ \~" }}</span>
+          <span>{{ data.info.day[2] + '℃' }}</span>
         </div>
       </van-col>
     </van-row>
@@ -68,7 +60,7 @@
 export default {
   // src load error awalays show localhost
   layout: "app_layout",
-  data: function() {
+  data: function () {
     return {
       weather: "",
       weatherType: [
@@ -82,14 +74,14 @@ export default {
         // "yin",
         // "qing"
         "雪",
-         "雷",
-          "沙尘",
-           "雾",
-            "冰雹",
-             "云",
-              "雨",
-              "阴",
-               "晴",
+        "雷",
+        "沙尘",
+        "雾",
+        "冰雹",
+        "云",
+        "雨",
+        "阴",
+        "晴",
       ],
       today: Object,
       bigIcons: [],
@@ -101,6 +93,7 @@ export default {
     //   this.weather = result;
     //   this.today = result.data[0];
     // });
+
     this.weatherType.forEach((element, index) => {
       this.bigIcons[index] = require("~/assets/icon/weather/" +
         this.getWeatherIcon(element) +
@@ -109,6 +102,7 @@ export default {
         this.getWeatherIcon(element) +
         ".png");
     });
+    // this.loadRequest();
 
     this.$axios.$get("/360").then(
       result => {
@@ -118,19 +112,57 @@ export default {
           console.log("content", json.life);
           this.weather = json;
           this.today = json.life
-      }
-    )
+      })
 
-    // this.$ajax({
-    //         type: "GET",
-    //         url: "http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568",
-    //         success: function (res) {
-    //           console.log(res);
-    //         },
-    //       });
-   
+
+
+    //  this.$axios.$get("https://www.wanandroid.com/article/list/0/json").then(
+    //   result => {
+    //     console.log("content",result);
+    //   })
+
+    // let self = this
+    // var xhr = this.createXmlHttpRequest();
+    // xhr.open('GET', 'http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568', true);
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.onload = function () {
+    //   let result = JSON.parse(this.response)
+    //   self.urlData = result.data
+    //   console.log("content",result);
+    // }
+    // xhr.send(null);
+
+    // this.$axios({
+    //   url: "http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568",
+    //   method: 'GET',
+    //   jsonp: 'callback'
+    // }).then(
+    //   result => {
+    //     var content = result.replace("renderData(", "");
+    //     content = content.substr(0, content.length - 1);
+    //     var json = eval("(" + content + ")");
+    //     console.log("content", json.life);
+    //     this.weather = json;
+    //     this.today = json.life
+    //   })
+
   },
   methods: {
+    loadRequest() {
+      $fetch("http://tq.360.cn/api/weatherquery/querys?app=tq360&code=101210106&t=1680931573567&c=1681032783673&_jsonp=renderData&_=1680931573568").then(
+        result => {
+          console.log(result);
+        }
+      );
+    },
+    createXmlHttpRequest() {
+      if (window.ActiveXObject) { //如果是IE浏览器
+        // eslint-disable-next-line no-undef
+        return new ActiveXObject("Microsoft.XMLHTTP");
+      } else if (window.XMLHttpRequest) { //非IE浏览器
+        return new XMLHttpRequest();
+      }
+    },
     getWeatherIcon(type) {
       switch (type) {
         // case "xue":
@@ -154,7 +186,7 @@ export default {
         // default:
         //   return "icon_thundershower";
 
-         case "雪":
+        case "雪":
           return "icon_snow";
         case "雷":
           return "icon_thundershower";
@@ -181,25 +213,29 @@ export default {
 </script>
 
 <style>
-.weather-air-level{
+.weather-air-level {
   font-size: 25px;
 }
+
 .weather {
   padding: 20px;
   height: 100%;
   background-color: rgb(236, 236, 236);
 }
+
 .weather-title {
   width: 100%;
   text-align: center;
   font-size: 25px;
 }
+
 .weather-line {
   background-color: gray;
   width: 1.5px;
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
 .weather-box {
   display: flex;
   justify-content: space-around;
@@ -208,6 +244,7 @@ export default {
   border: 2px solid rgba(77, 74, 74, 0.144);
   border-radius: 5px;
 }
+
 .weather-today {
   display: flex;
   flex-direction: column;
@@ -225,8 +262,10 @@ export default {
 }
 
 .weather-big-icon {
-  height: 80%;
   width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
 }
 
 .weather-small-icon {
@@ -247,6 +286,7 @@ export default {
   font-size: 15px;
   text-align: center;
 }
+
 .weather-item div:last-child {
   font-size: 8px;
 }

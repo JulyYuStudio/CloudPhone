@@ -1,9 +1,16 @@
 <template>
   <div class="chat-item-other" v-if="type == item.type">
     <div class="chat-item-left-avatar">😀</div>
-    <div class="chat-item-left">{{item.content}}</div>
+    <div class="chat-item-left">
+      <div>
+        {{ item.content }}
+      </div>
+
+        <van-image width="200" v-show='item.imgUrl' :src='item.imgUrl' />
+    </div>
+
   </div>
-  <div v-else class="chat-item chat-item-right">{{item.content}}</div>
+  <div v-else class="chat-item chat-item-right">{{ item.content }}</div>
 </template>
 
 <script>
@@ -31,6 +38,7 @@ export default {
   *display: inline;
   *zoom: 1;
 }
+
 .chat-item-other {
   margin-top: 5px;
   margin-bottom: 10px;
@@ -55,6 +63,7 @@ export default {
   overflow: hidden;
   margin-bottom: 5px;
 }
+
 .chat-item-left {
   float: left;
   margin-left: 10px;
@@ -65,11 +74,11 @@ export default {
   background-color: rgb(80, 210, 80);
   margin-right: 40px;
 }
+
 .chat-item-right {
   float: right;
   border: 1px white solid;
   background-color: white;
   text-align: right;
   margin-left: 40px;
-}
-</style>
+}</style>

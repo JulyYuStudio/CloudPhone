@@ -2,7 +2,7 @@
 
 <template>
     <div>
-        <van-tag type="success" class="base-tag-child">{{ $t('base64.img_base64') }}</van-tag>
+        <van-tag type="success" class="base-tag-child">{{ $t('base64.base64_img') }}</van-tag>
         <div class="base-menu-child">
             <van-cell-group>
                 <div class="base-center">
@@ -15,7 +15,7 @@
                 </div>
             </van-cell-group>
         </div>
-        <van-tag type="success" class="base-tag-child">{{ $t('base64.base64_img') }}</van-tag>
+        <van-tag type="success" class="base-tag-child">{{ $t('base64.img_base64') }}</van-tag>
         <div class="base-menu-child">
             <van-cell-group>
                 <div class="base-center">
@@ -41,6 +41,17 @@
 <script>
 export default {
     layout: "app_layout",
+    mounted(){
+        // this.$axios.$get("https://api-storage.4ce.cn/v1/92dd1d84dca82378224c6ac74c8bcb12.jpg").then(result => {
+        //   console.log(" -----> ");
+        //   console.log(" -----> " + result);
+        //   this.fieldValue = result;
+
+        // });
+        // this.$axios.$get("https://fsh-api.inventionpro.repl.co/meme").then(result => {
+        //     console.log(" -----> " + result.link);
+        // });
+    },
     data() {
         return {
             fieldValue: "",

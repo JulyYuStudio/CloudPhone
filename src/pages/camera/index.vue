@@ -8,6 +8,7 @@
 
 <script>
 export default {
+    layout: 'app_layout',
     data() {
         return {
             mediaStreamTrack: {}, // 退出时关闭摄像头

@@ -64,13 +64,25 @@ export default {
         this.sendMsg();
       }
     },
+    sendErrorMsg(){
+      // this.msgs.push({
+      //           content:  "不好意思，好像网络出现问题，我无法正常和你交谈~",
+      //           type: "left"
+      //         });
+      this.$axios.$get("https://fsh-api.inventionpro.repl.co/meme").then(result => {
+        this.msgs.push({
+                content:  "不好意思，好像网络出现问题，我无法正常和你交谈~ 不如送你一张图片吧",
+                imgUrl:  result.link,
+                type: "left"
+              });
+        });
+    },
     sendMsg() {
       if (this.msg.length) {
         this.msgs.push({
           content: this.msg,
           type: "right"
         });
-
         this.$axios
           .$post("/chat", {
             reqType: 0,
@@ -91,24 +103,13 @@ export default {
                 type: "left"
               });
             }else{
-              this.msgs.push({
-                content:  "不好意思，好像网络出现问题，我无法正常和你交谈~",
-                type: "left"
-              });
+              this.sendErrorMsg();
             }
           }).catch((error) => {
-						this.msgs.push({
-                content:  "不好意思，好像网络出现问题，我无法正常和你交谈~",
-                type: "left"
-              });
+            this.sendErrorMsg();
 					});
         this.msg = "";
       }
-      console.log(
-        document.documentElement.scrollHeight +
-          "test" +
-          document.documentElement.clientHeight
-      );
       try {
         window.scrollTo(
           0,

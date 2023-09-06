@@ -1,9 +1,9 @@
 {
-    "name": "cloud_desktop",
+    "name": "cloud-desktop",
     "version": "1.0.0",
     "description": "Web Cloud Smart Desktop",
-    "homepage": "https://github.com/lifelikejuly/Cloud-Desktop",
-    "author": "July Yu",
+    "homepage": "https://github.com/lifelikejuly/Cloud_Desktop",
+    "author": "JulyYu",
     "private": true,
     "scripts": {
         "dev": "nuxt -p 4000",
