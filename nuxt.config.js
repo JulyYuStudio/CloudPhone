@@ -5,7 +5,7 @@
 const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
     target: 'static',
     router: {
-        base: '/Cloud_Desktop',
+        base: '/Web_CloudDesktop',
         middleware: 'i18n'
     }
 } : {}
