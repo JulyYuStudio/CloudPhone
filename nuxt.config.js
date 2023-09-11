@@ -46,7 +46,7 @@ module.exports = {
         ]
     },
     router: {
-        base: '/Cloud_Desktop',
+        base: '/Web_CloudDesktop',
         middleware: 'i18n'
     },
     ...routerBase,
