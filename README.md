@@ -33,7 +33,7 @@ yarn run dev
 * 19/07/08
 增加地图显示功能（使用高德地图实现）, 增加i18n国际化，设置中切换语言
 * 19/07/15
-完善设置页面的UI展示，计划一些需要去实现的功能yar
+完善设置页面的UI展示，计划一些需要去实现的功能
 * 19/07/19
 完成计算器App简易加减乘除功能,页面TabBar遮盖问题修复
 * 19/07/23
@@ -41,5 +41,9 @@ yarn run dev
 
 
 ## 打包发布
-docs 提交到仓库
+docs 需要手动提交到仓库
 github action  增加pages
+
+
+我自己都忘了仓库的web是怎么自动部署
+https://github.com/lifelikejuly/Web_CloudDesktop

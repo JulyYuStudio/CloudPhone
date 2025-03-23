@@ -48,5 +48,10 @@
         "name": "app.setting",
         "link": "/settings",
         "icon": "app/ic_app_settings.png"
+    },
+    {
+        "name": "app.setting",
+        "link": "/settings",
+        "icon": "app/ic_app_settings.png"
     }
 ]
