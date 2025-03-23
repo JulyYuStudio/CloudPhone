@@ -1,11 +1,9 @@
 import { NuxtAxiosInstance } from '@nuxtjs/axios';
-import { NuxtAppOptions } from '@nuxt/vue-app';
+// import { NuxtAppOptions } from '@nuxt/vue-app';
 
 export default function ({
-    $axios,
-    app,
+    $axios
 }: {
-    app: NuxtAppOptions;
     $axios: NuxtAxiosInstance;
 }) {
     // let appUrl = "https://www.tianqiapi.com/"
