@@ -1,8 +1,8 @@
 {
-    "name": "Web_CloudDesktop",
+    "name": "CloudPhone",
     "version": "1.0.0",
     "description": "Web Cloud Smart Desktop",
-    "homepage": "https://github.com/lifelikejuly/Web_CloudDesktop",
+    "homepage": "https://github.com/JulyYuStudio/CloudPhone",
     "author": "JulyYu",
     "private": true,
     "scripts": {

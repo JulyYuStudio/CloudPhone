@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <model-viewer class='ar-index' v-if="isMounted" src='/Nuxt-Jay/models/GiftBox_gltf.gltf' shadow-intensity="1"
+    <model-viewer class='ar-index' v-if="isMounted" src='/CloudPhone/models/GiftBox_gltf.gltf' shadow-intensity="1"
       camera-controls touch-action="pan-y" alt='test'>
     </model-viewer>
   </div>

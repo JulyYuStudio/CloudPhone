@@ -5,7 +5,7 @@
 const routerBase = process.env.NODE_ENV === 'GH_PAGES' ? {
     target: 'static',
     router: {
-        base: '/Web_CloudDesktop',
+        base: '/CloudPhone',
         middleware: 'i18n'
     }
 } : {}
@@ -46,7 +46,7 @@ module.exports = {
         ]
     },
     router: {
-        base: '/Web_CloudDesktop',
+        base: '/CloudPhone',
         middleware: 'i18n'
     },
     ...routerBase,
@@ -92,7 +92,7 @@ module.exports = {
 
     },
     generate: {
-        dir: 'docs',
+        dir: 'static/docs',
         subFloders: false
     },
     axios: {
