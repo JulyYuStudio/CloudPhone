@@ -89,3 +89,4 @@ sw.*
 
 /docs
 /static
+package-lock.json
