@@ -16,4 +16,4 @@ git init
 git checkout main
 git add .
 git commit -m 'deploy: update site content'
-git push -f git@github.com:lifelikejuly/Web_CloudDesktop.git
+git push -f git@github.com:JulyYuStudio/CloudPhone.git
