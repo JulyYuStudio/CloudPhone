@@ -92,7 +92,7 @@ module.exports = {
 
     },
     generate: {
-        dir: 'static/docs',
+        dir: 'dist',
         subFloders: false
     },
     axios: {
