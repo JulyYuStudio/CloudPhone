@@ -10,9 +10,9 @@
       </div>
       <div class="setting-menu-child">
         <van-cell-group>
-          <van-cell :title='$t("settings.blog")' is-link clickable="true" url="https://blog.julyyu.cn/"/>
-          <van-cell :title='$t("settings.juejin")' is-link clickable="true" url="https://juejin.cn/user/817692383122408"/>
-          <van-cell :title='$t("settings.github")' is-link clickable="true" url="https://github.com/lifelikejuly"/>
+          <van-cell :title='$t("settings.blog")' is-link clickable="true" @click="goTo('https://blog.julyyu.cn/', $t('settings.blog'))"/>
+          <van-cell :title='$t("settings.juejin")' is-link clickable="true"  @click="goTo('https://juejin.cn/user/817692383122408', $t('settings.juejin'))"/>
+          <van-cell :title='$t("settings.github")' is-link clickable="true" @click="goTo('https://github.com/lifelikejuly',$t('settings.github'))"/>
         </van-cell-group>
       </div>
       <div class="setting-menu-child">
@@ -30,7 +30,7 @@ export default {
   layout: "app_layout",
   methods:{
     goTo(link,title){
-
+      window.open(link, '_blank');
     }
   }
 };

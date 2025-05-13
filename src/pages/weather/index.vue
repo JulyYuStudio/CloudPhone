@@ -1,17 +1,24 @@
 <template>
-  <div class="weather-index">
-    <div class="weather-content">
-      <div>
-        <img src="~/assets/icon/weather/weather_icon.png" />
-      </div>
+  <mobile-wrapper>
+    <div class="weather-index">
+      <div class="weather-content">
+        <div>
+          <img src="~/assets/icon/weather/weather_icon.png" />
+        </div>
 
-      <span>July 天气通</span>
+        <span>July 天气通</span>
+      </div>
     </div>
-  </div>
+  </mobile-wrapper>
 </template>
 
 <script>
+import MobileWrapper from '~/components/MobileWrapper';
+
 export default {
+  components: {
+    MobileWrapper
+  },
   mounted() {
     setTimeout(() => {
       this.$router.replace({

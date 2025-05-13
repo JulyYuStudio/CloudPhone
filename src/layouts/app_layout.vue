@@ -1,32 +1,40 @@
 <!-- 公共模版 头部【名称】 名称  底部【回退】【返回首页】-->
 <template>
-  <transition name="slide-fade">
-    <div class="parent">
-      <AppToolBar :title="this.$route.query.title" />
-      <div class="content">
-        <nuxt />
+
+    <transition name="slide-fade">
+      <div class="phone-container">
+        <div class="phone-frame">
+      <div class="parent">
+        <AppToolBar :title="this.$route.query.title" />
+        <div class="content">
+          <nuxt />
+        </div>
+        <van-tabbar :route="false" class="tabbar-bottom">
+          <van-tabbar-item
+            :name="$t('home.home')"
+            icon="arrow-left"
+            :replace="true"
+            @click="back"
+          >Back</van-tabbar-item>
+          <van-tabbar-item
+            :name="$t('home.back')"
+            icon="home-o"
+            @click="goHome"
+            :replace="true"
+            to="/"
+          >Home</van-tabbar-item>
+        </van-tabbar>
       </div>
-      <van-tabbar :route="false" class="tabbar-bottom">
-        <van-tabbar-item
-          :name="$t('home.home')"
-          icon="arrow-left"
-          :replace="true"
-          @click="back"
-        >Back</van-tabbar-item>
-        <van-tabbar-item
-          :name="$t('home.back')"
-          icon="home-o"
-          @click="goHome"
-          :replace="true"
-          to="/"
-        >Home</van-tabbar-item>
-      </van-tabbar>
     </div>
-  </transition>
+  </div>
+    </transition>
+
 </template>
 
 <script>
 import AppToolBar from "~/components/app_toolbar";
+import MobileWrapper from '~/components/MobileWrapper';
+
 export default {
   props: {
     title: String
@@ -46,6 +54,23 @@ export default {
 </script>
 
 <style>
+.phone-container {
+  width: 375px;
+  height: 667px;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 0 10px #333, 0 0 30px rgba(0,0,0,0.5);
+}
+
+.phone-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .slide-fade-enter-active {
   transition: all 0.3s ease;
 }
@@ -68,11 +93,11 @@ body {
 }
 .content {
   width: 100%;
-  overflow: auto;
   position: absolute;
   z-index: 10;
   top: 46px;
   bottom: 50px;
+  overflow-y: auto;
 }
 .tabbar-bottom {
   width: 100%;

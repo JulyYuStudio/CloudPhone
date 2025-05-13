@@ -1,43 +1,46 @@
 <template>
-  <div class="page-container">
-  <div class="main">
-    <div class="display-board">{{inputBoxValue()}}</div>
-    <table class="key-board">
-      <tr>
-        <td>AC</td>
-        <td>±</td>
-        <td>÷</td>
-        <td>x</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>+</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td rowspan="2">=</td>
-      </tr>
-      <tr>
-        <td colspan="2">0</td>
-        <td>.</td>
-      </tr>
-    </table>
-  </div>
+
+    <div class="page-container">
+    <div class="main">
+      <div class="display-board">{{inputBoxValue()}}</div>
+      <table class="key-board">
+        <tr>
+          <td>AC</td>
+          <td>±</td>
+          <td>÷</td>
+          <td>x</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>+</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td rowspan="2">=</td>
+        </tr>
+        <tr>
+          <td colspan="2">0</td>
+          <td>.</td>
+        </tr>
+      </table>
+    </div>
    </div>
+
 </template>
 
 <script>
 import $ from "jquery";
+
 export default {
   layout: "app_layout",
   name: "calculator",

@@ -1,7 +1,6 @@
 
-
 <template>
-    <div>
+     <div>
         <van-tag type="success" class="base-tag-child">{{ $t('base64.base64_img') }}</van-tag>
         <div class="base-menu-child">
             <van-cell-group>
@@ -40,6 +39,7 @@
 
 <script>
 export default {
+
     layout: "app_layout",
     mounted(){
         // this.$axios.$get("https://api-storage.4ce.cn/v1/92dd1d84dca82378224c6ac74c8bcb12.jpg").then(result => {
@@ -81,7 +81,8 @@ export default {
 }
 </script>
 
-<style> .base-tag-child {
+<style> 
+.base-tag-child {
      margin-top: 15px;
      margin-left: 15px;
      font-size: 20px;

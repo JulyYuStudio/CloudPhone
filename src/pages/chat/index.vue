@@ -1,18 +1,12 @@
 <template>
-  <div class="chat">
-     <!-- <van-nav-bar
-      @click-left="onClickLeft"
-      :fixed="true"
-      :title="$t(`${this.$route.query.title}`)"
-      left-arrow
-    />
-    -->
-    <ul class="chat-list">
-      <li class="chat-list-item" v-for="(item,index) in msgs" :key="index">
-        <ChatItemContent :type="'left'" :item="item" />
-      </li>
-      <!-- <li clss="chat-item-left" v-for="(item,index) in msgs" :key="index">{{item}}</li> -->
-    </ul>
+  <div>
+    <div class="chat">
+      <ul class="chat-list">
+        <li class="chat-list-item" v-for="(item,index) in msgs" :key="index">
+          <ChatItemContent :type="'left'" :item="item" />
+        </li>
+      </ul>
+    </div>
     <div class="chat-input">
       <input v-model="msg" :placeholder="$t('chat.input_placeholder')" @keypress="send" />
       <button class="chat-input-send" v-on:click="sendMsg()">▶️</button>
@@ -22,7 +16,6 @@
 
 <script >
 import ChatItemContent from "~/components/chat_content";
-import { Component, Vue } from "vue-property-decorator";
 export default {
      layout: 'app_layout',
   data() {
@@ -149,10 +142,18 @@ export default {
 
 .chat-input {
   position: fixed;
-  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   background-color: white;
   width: 100%;
+  margin-top: 58%;
+  max-width: 370px; /* 限制最大宽度以模拟手机屏幕，并适应内边距 */
+  border-radius: 0;
+  box-sizing: border-box;
+  z-index: 100;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
 }
 .chat-input input {
   flex: 9;

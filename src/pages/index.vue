@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <van-nav-bar class="title" :title="time" />
-    <div
-      class="index-bg"
-      :style="'backgroundImage: url(' + wallpaper +');' "
-    >
+  <div class="phone-container">
+    <div class="phone-frame">
+      <van-nav-bar class="title" :title="time" />
+      <div
+        class="index-bg"
+        :style="'backgroundImage: url(' + wallpaper +');' "
+      >
       <van-grid class="index-grid" :gutter="0" :clickable="true" :border="false" :column-num="3">
         <van-grid-item
           class="index-grid-item"
@@ -15,6 +16,7 @@
           <AppIcon :app="app" />
         </van-grid-item>
       </van-grid>
+    </div>
     </div>
   </div>
 </template>
@@ -76,11 +78,28 @@ export default {
 .van-nav-bar__title {
   font-size: 20px;
 }
+.phone-container {
+  width: 375px;
+  height: 667px;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 0 10px #333, 0 0 30px rgba(0,0,0,0.5);
+}
+
+.phone-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .index-bg {
   width: 100%;
-  bottom: 0px;
-  top: 46px;
+  height: calc(100% - 46px);
   position: absolute;
+  bottom: 0;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

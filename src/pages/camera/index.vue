@@ -1,13 +1,16 @@
 <template>
-    <div id="videoBg" class="base-menu-child-box">
-        <div id="videoSize" class="base-menu-child-cell">
-            <video id="video" autoplay=""></video>
+        <div id="videoBg" class="base-menu-child-box">
+            <div id="videoSize" class="base-menu-child-cell">
+                <video id="video" autoplay=""></video>
+            </div>
         </div>
-    </div>
+
 </template>
 
 <script>
+
 export default {
+
     layout: 'app_layout',
     data() {
         return {
